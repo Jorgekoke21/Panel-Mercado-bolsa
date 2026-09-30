@@ -104,7 +104,9 @@ function translationServices(): { provider: TranslationProvider | null; cache: T
     ? new LibreTranslateProvider(process.env.HEADLINE_TRANSLATION_VERSION || "libretranslate-1.9.6-argos-model-1", process.env.HEADLINE_TRANSLATION_URL || DEFAULT_LIBRE_URL)
     : new OllamaTranslateGemmaProvider(process.env.HEADLINE_TRANSLATION_MODEL || DEFAULT_OLLAMA_MODEL, process.env.HEADLINE_TRANSLATION_URL || DEFAULT_OLLAMA_URL);
   const url = process.env.SUPABASE_URL;
-  const secret = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const secret = process.env.HEADLINE_TRANSLATION_MODE === "cache-only"
+    ? process.env.SUPABASE_ANON_KEY
+    : process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !secret) return { provider, cache: null };
   const db = createClient<Database>(url, secret, { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } });
   return { provider, cache: new SupabaseHeadlineCache(db) };
@@ -113,7 +115,9 @@ function translationServices(): { provider: TranslationProvider | null; cache: T
 /** Shared presentation boundary for World Pulse, entity pages, Ask and event detail. */
 export async function localizeEventCards(events: readonly EventCardVM[], locale: Locale): Promise<EventCardVM[]> {
   const { provider, cache } = translationServices();
-  return localizeHeadlines(events, locale, provider, cache);
+  return localizeHeadlines(events, locale, provider, cache, {
+    cacheOnly: process.env.HEADLINE_TRANSLATION_MODE === "cache-only",
+  });
 }
 
 export async function localizeEntityContext<T extends { events: EventCardVM[]; impacts: { event: EventCardVM }[] }>(context: T, locale: Locale): Promise<T> {

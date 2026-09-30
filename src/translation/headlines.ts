@@ -58,6 +58,7 @@ export async function localizeHeadlines<T extends HeadlineInput>(
   targetLocale: Locale,
   provider: TranslationProvider | null,
   cache: TranslationCache | null,
+  options: { cacheOnly?: boolean } = {},
 ): Promise<(T & { headline: DisplayHeadline })[]> {
   const result = items.map((item) => ({
     ...item,
@@ -98,6 +99,8 @@ export async function localizeHeadlines<T extends HeadlineInput>(
       for (const index of entry.indices) result[index]!.headline = { title: translated, language: targetLocale, status: "translated", provider: provider.id };
     } else missing.set(key, entry);
   }
+  // Hosted deployments reuse translations without contacting a local model.
+  if (options.cacheOnly) return result;
 
   const groups = new Map<string, typeof missing extends Map<string, infer V> ? V[] : never>();
   for (const entry of missing.values()) {
