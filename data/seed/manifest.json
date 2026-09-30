@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "datasets": [
+    {
+      "key": "wikipedia-sp500-constituents",
+      "name": "S&P 500 constituents",
+      "source": "Wikipedia — List of S&P 500 companies",
+      "sourceUrl": "https://en.wikipedia.org/w/index.php?oldid=1376729338",
+      "license": "CC BY-SA 4.0",
+      "isSecondarySource": true,
+      "file": "raw/wikipedia-sp500-constituents.wikitext",
+      "sha256": "0f26e2860afab41cef5f4f7ef186fc9e07d402efe0bc5f0a8e206fbcc798b6f0",
+      "retrievedAt": "2026-09-28T22:42:17.195Z",
+      "effectiveDate": null,
+      "wikipedia": {
+        "pageTitle": "List of S&P 500 companies",
+        "revisionId": 1376729338,
+        "revisionTimestamp": "2026-09-25T22:49:33Z"
+      },
+      "notes": "Composition as documented on Wikipedia at the pinned revision. Not an official S&P Dow Jones Indices file; there is no official effective date. Point-in-time membership before this snapshot is NOT represented."
+    },
+    {
+      "key": "wikipedia-gics-structure",
+      "name": "GICS structure (sector / industry group / industry / sub-industry)",
+      "source": "Wikipedia — Global Industry Classification Standard",
+      "sourceUrl": "https://en.wikipedia.org/w/index.php?oldid=1373583957",
+      "license": "CC BY-SA 4.0",
+      "isSecondarySource": true,
+      "file": "raw/wikipedia-gics-structure.wikitext",
+      "sha256": "d7171fae4dc5de8da33b14f64a6db1ecb908fc2d5cc37da0fce6e5a112b22f1e",
+      "retrievedAt": "2026-09-28T22:42:17.652Z",
+      "effectiveDate": null,
+      "wikipedia": {
+        "pageTitle": "Global Industry Classification Standard",
+        "revisionId": 1373583957,
+        "revisionTimestamp": "2026-09-06T19:31:56Z"
+      },
+      "notes": "Secondary source used because MSCI blocks automated downloads of the official structure file. Validated against the S&P 500 sub-industries at build time. Replace with the official MSCI file when available."
+    }
+  ]
+}

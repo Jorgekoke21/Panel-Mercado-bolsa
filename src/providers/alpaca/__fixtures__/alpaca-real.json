@@ -1,0 +1,575 @@
+{
+ "note": "Respuestas REALES de Alpaca (cuenta Basic, 2026-09-29), reducidas a los campos que usa MarketRadar. Sin datos de la cuenta.",
+ "bars": {
+  "bars": {
+   "AAPL": [
+    {
+     "c": 506.09,
+     "h": 507.97,
+     "l": 500.33,
+     "n": 627489,
+     "o": 504.7165,
+     "t": "2020-08-26T04:00:00Z",
+     "v": 42685290,
+     "vw": 504.426506
+    },
+    {
+     "c": 500.04,
+     "h": 509.94,
+     "l": 495.33,
+     "n": 679931,
+     "o": 508.57,
+     "t": "2020-08-27T04:00:00Z",
+     "v": 40425833,
+     "vw": 502.642862
+    },
+    {
+     "c": 499.23,
+     "h": 505.77,
+     "l": 498.31,
+     "n": 686606,
+     "o": 504.05,
+     "t": "2020-08-28T04:00:00Z",
+     "v": 53137957,
+     "vw": 501.015981
+    },
+    {
+     "c": 129.04,
+     "h": 131,
+     "l": 126,
+     "n": 2753926,
+     "o": 127.39,
+     "t": "2020-08-31T04:00:00Z",
+     "v": 243737082,
+     "vw": 129.013214
+    },
+    {
+     "c": 134.18,
+     "h": 134.8,
+     "l": 130.53,
+     "n": 1494294,
+     "o": 132.76,
+     "t": "2020-09-01T04:00:00Z",
+     "v": 162353762,
+     "vw": 132.93821
+    }
+   ],
+   "BRK.B": [
+    {
+     "c": 214.66,
+     "h": 215.83,
+     "l": 212.3,
+     "n": 51395,
+     "o": 212.98,
+     "t": "2020-08-26T04:00:00Z",
+     "v": 5160600,
+     "vw": 214.598192
+    },
+    {
+     "c": 216.87,
+     "h": 217.98,
+     "l": 214.76,
+     "n": 56096,
+     "o": 214.99,
+     "t": "2020-08-27T04:00:00Z",
+     "v": 5190522,
+     "vw": 216.905874
+    },
+    {
+     "c": 218.55,
+     "h": 218.81,
+     "l": 215.7297,
+     "n": 49465,
+     "o": 217.51,
+     "t": "2020-08-28T04:00:00Z",
+     "v": 4789892,
+     "vw": 217.75766
+    },
+    {
+     "c": 218.04,
+     "h": 219.45,
+     "l": 217.65,
+     "n": 61155,
+     "o": 218.62,
+     "t": "2020-08-31T04:00:00Z",
+     "v": 7224704,
+     "vw": 218.326412
+    },
+    {
+     "c": 218.55,
+     "h": 218.59,
+     "l": 216.62,
+     "n": 49185,
+     "o": 216.92,
+     "t": "2020-09-01T04:00:00Z",
+     "v": 4649571,
+     "vw": 217.699811
+    }
+   ]
+  },
+  "next_page_token": null
+ },
+ "splitAdjusted": {
+  "bars": {
+   "AAPL": [
+    {
+     "c": 126.52,
+     "h": 126.99,
+     "l": 125.08,
+     "n": 627489,
+     "o": 126.18,
+     "t": "2020-08-26T04:00:00Z",
+     "v": 170741160,
+     "vw": 126.11
+    },
+    {
+     "c": 125.01,
+     "h": 127.49,
+     "l": 123.83,
+     "n": 679931,
+     "o": 127.14,
+     "t": "2020-08-27T04:00:00Z",
+     "v": 161703332,
+     "vw": 125.66
+    },
+    {
+     "c": 124.81,
+     "h": 126.44,
+     "l": 124.58,
+     "n": 686606,
+     "o": 126.01,
+     "t": "2020-08-28T04:00:00Z",
+     "v": 212551828,
+     "vw": 125.25
+    },
+    {
+     "c": 129.04,
+     "h": 131,
+     "l": 126,
+     "n": 2753926,
+     "o": 127.39,
+     "t": "2020-08-31T04:00:00Z",
+     "v": 243737082,
+     "vw": 129.013214
+    },
+    {
+     "c": 134.18,
+     "h": 134.8,
+     "l": 130.53,
+     "n": 1494294,
+     "o": 132.76,
+     "t": "2020-09-01T04:00:00Z",
+     "v": 162353762,
+     "vw": 132.93821
+    }
+   ]
+  },
+  "next_page_token": null
+ },
+ "recentSipForbidden": {
+  "status": 403,
+  "body": {
+   "message": "subscription does not permit querying recent SIP data"
+  }
+ },
+ "corporateActions": {
+  "corporate_actions": {
+   "forward_splits": [
+    {
+     "ex_date": "2020-08-31",
+     "new_rate": 4,
+     "old_rate": 1,
+     "payable_date": "2020-08-28",
+     "process_date": "2020-08-31",
+     "record_date": "2020-08-24",
+     "symbol": "AAPL"
+    },
+    {
+     "ex_date": "2016-10-03",
+     "new_rate": 10000,
+     "old_rate": 9947,
+     "process_date": "2016-10-03",
+     "symbol": "HON"
+    },
+    {
+     "ex_date": "2018-10-01",
+     "new_rate": 1011,
+     "old_rate": 1000,
+     "process_date": "2018-10-01",
+     "symbol": "HON"
+    },
+    {
+     "ex_date": "2018-10-29",
+     "new_rate": 1032,
+     "old_rate": 1000,
+     "process_date": "2018-10-29",
+     "symbol": "HON"
+    },
+    {
+     "ex_date": "2021-07-20",
+     "new_rate": 4,
+     "old_rate": 1,
+     "payable_date": "2021-07-19",
+     "process_date": "2021-07-20",
+     "record_date": "2021-06-21",
+     "symbol": "NVDA"
+    },
+    {
+     "ex_date": "2024-06-10",
+     "new_rate": 10,
+     "old_rate": 1,
+     "payable_date": "2024-06-10",
+     "process_date": "2024-06-10",
+     "record_date": "2024-06-07",
+     "symbol": "NVDA"
+    }
+   ],
+   "reverse_splits": [
+    {
+     "ex_date": "2021-08-02",
+     "new_cusip": "369604301",
+     "new_rate": 1,
+     "old_cusip": "369604103",
+     "old_rate": 8,
+     "payable_date": "2021-08-02",
+     "process_date": "2021-08-02",
+     "record_date": "2021-08-02",
+     "symbol": "GE"
+    },
+    {
+     "ex_date": "2026-06-29",
+     "new_cusip": "438516205",
+     "new_rate": 1,
+     "old_cusip": "438516106",
+     "old_rate": 2,
+     "payable_date": "2026-06-29",
+     "process_date": "2026-06-29",
+     "record_date": "2026-06-29",
+     "symbol": "HON"
+    }
+   ],
+   "cash_dividends": [
+    {
+     "ex_date": "2020-05-08",
+     "foreign": false,
+     "payable_date": "2020-05-14",
+     "process_date": "2020-05-14",
+     "rate": 0.82,
+     "record_date": "2020-05-11",
+     "special": false,
+     "symbol": "AAPL"
+    },
+    {
+     "ex_date": "2020-08-07",
+     "foreign": false,
+     "payable_date": "2020-08-13",
+     "process_date": "2020-08-13",
+     "rate": 0.82,
+     "record_date": "2020-08-10",
+     "special": false,
+     "symbol": "AAPL"
+    },
+    {
+     "ex_date": "2020-11-06",
+     "foreign": false,
+     "payable_date": "2020-11-12",
+     "process_date": "2020-11-12",
+     "rate": 0.205,
+     "record_date": "2020-11-09",
+     "special": false,
+     "symbol": "AAPL"
+    },
+    {
+     "ex_date": "2024-02-15",
+     "foreign": false,
+     "payable_date": "2024-03-01",
+     "process_date": "2024-03-01",
+     "rate": 0.58,
+     "record_date": "2024-02-19",
+     "special": false,
+     "symbol": "COP"
+    },
+    {
+     "ex_date": "2024-02-15",
+     "foreign": false,
+     "payable_date": "2024-03-01",
+     "process_date": "2024-03-01",
+     "rate": 0.2,
+     "record_date": "2024-02-19",
+     "special": false,
+     "symbol": "COP"
+    },
+    {
+     "ex_date": "2024-02-15",
+     "foreign": false,
+     "payable_date": "2024-03-01",
+     "process_date": "2024-03-01",
+     "rate": 0.18,
+     "record_date": "2024-02-16",
+     "special": false,
+     "symbol": "F"
+    },
+    {
+     "ex_date": "2024-02-15",
+     "foreign": false,
+     "payable_date": "2024-03-01",
+     "process_date": "2024-03-01",
+     "rate": 0.15,
+     "record_date": "2024-02-16",
+     "special": false,
+     "symbol": "F"
+    },
+    {
+     "ex_date": "2025-02-18",
+     "foreign": false,
+     "payable_date": "2025-03-03",
+     "process_date": "2025-03-03",
+     "rate": 0.15,
+     "record_date": "2025-02-18",
+     "special": true,
+     "symbol": "F"
+    },
+    {
+     "ex_date": "2025-02-18",
+     "foreign": false,
+     "payable_date": "2025-03-03",
+     "process_date": "2025-03-03",
+     "rate": 0.15,
+     "record_date": "2025-02-18",
+     "special": false,
+     "symbol": "F"
+    },
+    {
+     "ex_date": "2021-06-25",
+     "foreign": false,
+     "payable_date": "2021-07-26",
+     "process_date": "2021-07-26",
+     "rate": 0.01,
+     "record_date": "2021-06-28",
+     "special": false,
+     "symbol": "GE"
+    },
+    {
+     "ex_date": "2021-06-25",
+     "foreign": false,
+     "payable_date": "2021-07-26",
+     "process_date": "2021-07-26",
+     "rate": 0.01,
+     "record_date": "2021-06-28",
+     "special": false,
+     "symbol": "GE"
+    },
+    {
+     "ex_date": "2026-02-27",
+     "foreign": false,
+     "payable_date": "2026-03-13",
+     "process_date": "2026-03-13",
+     "rate": 1.19,
+     "record_date": "2026-02-27",
+     "special": false,
+     "symbol": "HON"
+    },
+    {
+     "ex_date": "2026-05-15",
+     "foreign": false,
+     "payable_date": "2026-06-05",
+     "process_date": "2026-06-05",
+     "rate": 1.19,
+     "record_date": "2026-05-15",
+     "special": false,
+     "symbol": "HON"
+    },
+    {
+     "ex_date": "2026-08-14",
+     "foreign": false,
+     "payable_date": "2026-09-04",
+     "process_date": "2026-09-04",
+     "rate": 0.7,
+     "record_date": "2026-08-14",
+     "special": false,
+     "symbol": "HON"
+    },
+    {
+     "ex_date": "2020-06-04",
+     "foreign": false,
+     "payable_date": "2020-06-26",
+     "process_date": "2020-06-26",
+     "rate": 0.16,
+     "record_date": "2020-06-05",
+     "special": false,
+     "symbol": "NVDA"
+    },
+    {
+     "ex_date": "2020-09-01",
+     "foreign": false,
+     "payable_date": "2020-09-24",
+     "process_date": "2020-09-24",
+     "rate": 0.16,
+     "record_date": "2020-09-02",
+     "special": false,
+     "symbol": "NVDA"
+    },
+    {
+     "ex_date": "2024-06-14",
+     "foreign": false,
+     "payable_date": "2024-06-20",
+     "process_date": "2024-06-20",
+     "rate": 0.5475,
+     "record_date": "2024-06-14",
+     "special": false,
+     "symbol": "XEL"
+    },
+    {
+     "ex_date": "2024-06-14",
+     "foreign": false,
+     "payable_date": "2024-07-22",
+     "process_date": "2024-07-22",
+     "rate": 0.5475,
+     "record_date": "2024-06-14",
+     "special": false,
+     "symbol": "XEL"
+    }
+   ],
+   "spin_offs": [
+    {
+     "ex_date": "2025-10-30",
+     "new_cusip": "83443Q103",
+     "new_rate": 0.25,
+     "new_symbol": "SOLS",
+     "payable_date": "2025-10-30",
+     "process_date": "2025-10-30",
+     "record_date": "2025-10-17",
+     "source_cusip": "438516106",
+     "source_rate": 1,
+     "source_symbol": "HON"
+    },
+    {
+     "ex_date": "2026-06-29",
+     "new_cusip": "43849R105",
+     "new_rate": 0.5,
+     "new_symbol": "HONA",
+     "payable_date": "2026-06-29",
+     "process_date": "2026-06-29",
+     "record_date": "2026-06-15",
+     "source_cusip": "438516106",
+     "source_rate": 1,
+     "source_symbol": "HON"
+    }
+   ]
+  },
+  "next_page_token": null
+ },
+ "assets": [
+  {
+   "symbol": "AAPL",
+   "name": "Apple Inc. Common Stock",
+   "exchange": "NASDAQ",
+   "status": "active",
+   "tradable": true,
+   "class": "us_equity"
+  },
+  {
+   "symbol": "BRK.B",
+   "name": "BERKSHIRE HATHAWAY Class B",
+   "exchange": "NYSE",
+   "status": "active",
+   "tradable": true,
+   "class": "us_equity"
+  },
+  {
+   "symbol": "GOOGL",
+   "name": "Alphabet Inc. Class A Common Stock",
+   "exchange": "NASDAQ",
+   "status": "active",
+   "tradable": true,
+   "class": "us_equity"
+  },
+  {
+   "symbol": "GOOG",
+   "name": "Alphabet Inc. Class C Capital Stock",
+   "exchange": "NASDAQ",
+   "status": "active",
+   "tradable": true,
+   "class": "us_equity"
+  },
+  {
+   "symbol": "IBM",
+   "name": "International Business Machines Corporation",
+   "exchange": "NYSE",
+   "status": "active",
+   "tradable": true,
+   "class": "us_equity"
+  },
+  {
+   "symbol": "SLB",
+   "name": "SLB Limited",
+   "exchange": "NYSE",
+   "status": "active",
+   "tradable": true,
+   "class": "us_equity"
+  },
+  {
+   "symbol": "SMCI",
+   "name": "Super Micro Computer, Inc. Common Stock",
+   "exchange": "NASDAQ",
+   "status": "active",
+   "tradable": true,
+   "class": "us_equity"
+  },
+  {
+   "symbol": "DPZ",
+   "name": "Domino's Pizza Inc Common Stock",
+   "exchange": "NASDAQ",
+   "status": "active",
+   "tradable": true,
+   "class": "us_equity"
+  }
+ ],
+ "calendar": [
+  {
+   "date": "2024-07-01",
+   "open": "09:30",
+   "close": "16:00"
+  },
+  {
+   "date": "2024-07-02",
+   "open": "09:30",
+   "close": "16:00"
+  },
+  {
+   "date": "2024-07-03",
+   "open": "09:30",
+   "close": "13:00"
+  },
+  {
+   "date": "2024-07-05",
+   "open": "09:30",
+   "close": "16:00"
+  },
+  {
+   "date": "2024-07-08",
+   "open": "09:30",
+   "close": "16:00"
+  },
+  {
+   "date": "2024-11-26",
+   "open": "09:30",
+   "close": "16:00"
+  },
+  {
+   "date": "2024-11-27",
+   "open": "09:30",
+   "close": "16:00"
+  },
+  {
+   "date": "2024-11-29",
+   "open": "09:30",
+   "close": "13:00"
+  },
+  {
+   "date": "2024-12-02",
+   "open": "09:30",
+   "close": "16:00"
+  }
+ ]
+}

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reduced from a real SEC filing instance: only cover-page and EPS share facts. -->
+<xbrl xmlns:dei="http://xbrl.sec.gov/dei" xmlns:us-gaap="http://fasb.org/us-gaap" xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+<context id="C_8cfbb9f2-2ad0-4c23-8545-636816ef8d1c">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_9ed9d23f-13e2-4666-915c-bbd2cfc2b3fa">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:MTwoPointThreeSevenFiveSeniorNotesDueTwoThousandThirtyNineMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_abf54bf0-3352-4326-b06d-778123e12455">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:EquivalentClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-04-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_ace37af9-26ba-46c6-be44-a28e6e2fa7b9">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:MTwoPointSixTwoFiveSeniorNotesDueTwoThousandFiftyNineMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_b33dcdba-af81-4b56-83a1-fde5ccc09987">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_b43ce702-3423-4bf5-9c33-e22fa0d6cd56">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2026-07-29</instant>
+        </period>
+    </context>
+<context id="C_b8e4e74c-f3da-4035-94d9-19d8a5ee3b64">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:EquivalentClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-01-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="C_d5362a6d-4afb-4e9b-b7e8-9a8b7cfe5156">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:EquivalentClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_da56fc8c-44c4-497c-bf28-0081f716e0eb">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:EquivalentClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-04-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="C_f5665049-33f0-4ed0-b1f2-ec67cd3d600e">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2026-07-29</instant>
+        </period>
+    </context>
+<context id="C_fb1add40-1020-4cde-9228-148a6682e714">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:EquivalentClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-04-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_fbeec02b-5a97-4c01-a23b-92b2c139d544">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_0236ab8a-b652-4467-b8e6-e742f5cb5fb2">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:EquivalentClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-04-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="C_07ce658c-72a1-41eb-9941-e0c41eff3e09">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:MTwoPointOneFiveZeroSeniorNotesDueTwoThousandTwentyEightMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_0f70e658-e3e1-414d-b962-c17a24bdc3b0">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:MZeroPointFiveZeroZeroSeniorNotesDueTwoThousandFortyOneMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_30fab6a0-5993-4916-bdb2-31d86550487c">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:EquivalentClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_41529a13-eb56-4671-988b-9d0adfdc0b6d">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:MOnePointFiveZeroZeroSeniorNotesDueTwoThousandThirtyMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_4d242acb-13cb-49ae-83c2-f0afd14f05cb">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:MOnePointSixTwoFiveSeniorNotesDueTwoThousandThirtyFiveMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_5484cdd4-c14b-4873-ac71-c66fbeb71151">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:EquivalentClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-01-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="C_60cf7bee-053b-491c-bcd8-955a95fb8e98">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:MTwoPointZeroZeroZeroSeniorNotesDueTwoThousandThirtyFourMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_71fda5cf-6edd-4cea-afff-a1a5af9d0df6">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001067983</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">brka:MOnePointOneTwoFiveSeniorNotesDueTwoThousandTwentySevenMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<dei:DocumentType
+      contextRef="C_fbeec02b-5a97-4c01-a23b-92b2c139d544"
+      id="F_26f9cafd-4244-441e-88f3-eb86abbc05c8">10-Q</dei:DocumentType>
+<dei:DocumentPeriodEndDate
+      contextRef="C_fbeec02b-5a97-4c01-a23b-92b2c139d544"
+      id="F_136f9b0d-57f8-44f9-9e24-07d2d7ee9b4f">2026-06-30</dei:DocumentPeriodEndDate>
+<dei:Security12bTitle
+      contextRef="C_b33dcdba-af81-4b56-83a1-fde5ccc09987"
+      id="F_cfc12786-3c02-4155-9f80-445471f31609">Class A Common Stock</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_8cfbb9f2-2ad0-4c23-8545-636816ef8d1c"
+      id="F_d0eb3ecd-6950-4ad4-8e05-ff6d09280373">Class B Common Stock</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_71fda5cf-6edd-4cea-afff-a1a5af9d0df6"
+      id="F_ec5be7bc-e4ed-4dc7-8067-4a8d3c26680b">1.125% Senior Notes due 2027</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_07ce658c-72a1-41eb-9941-e0c41eff3e09"
+      id="F_ac487b9c-ee80-4eba-89c6-3de404719d33">2.150% Senior Notes due 2028</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_41529a13-eb56-4671-988b-9d0adfdc0b6d"
+      id="F_5c82b587-dcab-416b-ae82-39bb05ad97f6">1.500% Senior Notes due 2030</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_60cf7bee-053b-491c-bcd8-955a95fb8e98"
+      id="F_a9339d53-ee7c-470f-90a5-e9cb2f5558f3">2.000% Senior Notes due 2034</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_4d242acb-13cb-49ae-83c2-f0afd14f05cb"
+      id="F_894cdda4-402d-4907-8472-ff9b78cd09f3">1.625% Senior Notes due 2035</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_9ed9d23f-13e2-4666-915c-bbd2cfc2b3fa"
+      id="F_174067a6-ced1-4b83-b485-b5b1c2b67351">2.375% Senior Notes due 2039</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_0f70e658-e3e1-414d-b962-c17a24bdc3b0"
+      id="F_5c8830b7-4aa1-4593-9c23-2666b050e3d7">0.500% Senior Notes due 2041</dei:Security12bTitle>
+<dei:Security12bTitle
+      contextRef="C_ace37af9-26ba-46c6-be44-a28e6e2fa7b9"
+      id="F_dcda3024-d97b-4a61-9377-59218e1d62cf">2.625% Senior Notes due 2059</dei:Security12bTitle>
+<dei:TradingSymbol
+      contextRef="C_b33dcdba-af81-4b56-83a1-fde5ccc09987"
+      id="F_e99af0c2-28d8-4554-9ea9-b993410bf5cd">BRK.A</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_8cfbb9f2-2ad0-4c23-8545-636816ef8d1c"
+      id="F_77fb960d-7169-462a-8e68-eafec26ec7d9">BRK.B</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_71fda5cf-6edd-4cea-afff-a1a5af9d0df6"
+      id="F_1ceb9ee3-d1c4-4e71-b0ef-63b871741c4a">BRK27</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_07ce658c-72a1-41eb-9941-e0c41eff3e09"
+      id="F_34115308-9201-4df0-89cf-e09814442d13">BRK28</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_41529a13-eb56-4671-988b-9d0adfdc0b6d"
+      id="F_50ec8893-4375-44bd-8ddf-ddd706760c1e">BRK30</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_60cf7bee-053b-491c-bcd8-955a95fb8e98"
+      id="F_04408658-4279-4c85-bac8-c05fc7560a34">BRK34</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_4d242acb-13cb-49ae-83c2-f0afd14f05cb"
+      id="F_21f29336-fe0a-4292-bc81-7fe46febca95">BRK35</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_9ed9d23f-13e2-4666-915c-bbd2cfc2b3fa"
+      id="F_7ecca61d-9969-43f9-b7fb-03e2e5379f6d">BRK39</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_0f70e658-e3e1-414d-b962-c17a24bdc3b0"
+      id="F_5a98ba61-eafa-4abb-bd53-2e0688c981b3">BRK41</dei:TradingSymbol>
+<dei:TradingSymbol
+      contextRef="C_ace37af9-26ba-46c6-be44-a28e6e2fa7b9"
+      id="F_f649a89c-25db-43c2-a0a3-dfa6ec8d901a">BRK59</dei:TradingSymbol>
+<dei:EntityCommonStockSharesOutstanding
+      contextRef="C_f5665049-33f0-4ed0-b1f2-ec67cd3d600e"
+      decimals="INF"
+      id="F_22ac0275-c89d-4114-9a1c-68fb1a129357"
+      unitRef="U_shares">488450</dei:EntityCommonStockSharesOutstanding>
+<dei:EntityCommonStockSharesOutstanding
+      contextRef="C_b43ce702-3423-4bf5-9c33-e22fa0d6cd56"
+      decimals="INF"
+      id="F_04d6cae4-a208-479c-b77e-a2034ac3efdb"
+      unitRef="U_shares">1408035161</dei:EntityCommonStockSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_fb1add40-1020-4cde-9228-148a6682e714"
+      decimals="0"
+      id="F_50858840-a13c-407e-84e1-2d2fedcef7c3"
+      unitRef="U_shares">1436443</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_da56fc8c-44c4-497c-bf28-0081f716e0eb"
+      decimals="0"
+      id="F_35e80d82-fd04-42aa-b825-17f37ed0aa55"
+      unitRef="U_shares">1438223</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_30fab6a0-5993-4916-bdb2-31d86550487c"
+      decimals="0"
+      id="F_fa94bb0f-c964-4c97-a703-45d53bfe0ccb"
+      unitRef="U_shares">1437279</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_5484cdd4-c14b-4873-ac71-c66fbeb71151"
+      decimals="0"
+      id="F_54542205-0dc8-4bb9-a1d0-255d42649039"
+      unitRef="U_shares">1438223</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_abf54bf0-3352-4326-b06d-778123e12455"
+      decimals="0"
+      id="F_9f0546f1-b14a-427e-9737-88210b720242"
+      unitRef="U_shares">2154664073</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_0236ab8a-b652-4467-b8e6-e742f5cb5fb2"
+      decimals="0"
+      id="F_a325b701-faba-4e38-bf68-d56377ec8d60"
+      unitRef="U_shares">2157335139</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_d5362a6d-4afb-4e9b-b7e8-9a8b7cfe5156"
+      decimals="0"
+      id="F_c0b3c14e-156e-41a3-84b8-67a51f49d2a2"
+      unitRef="U_shares">2155918015</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_b8e4e74c-f3da-4035-94d9-19d8a5ee3b64"
+      decimals="0"
+      id="F_f3061456-cd82-427c-8633-a460fc9c07d3"
+      unitRef="U_shares">2157335139</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+</xbrl>

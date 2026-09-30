@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reduced from a real SEC filing instance: only cover-page and EPS share facts. -->
+<xbrl xmlns:dei="http://xbrl.sec.gov/dei" xmlns:us-gaap="http://fasb.org/us-gaap" xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+<context id="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001973266</identifier>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_dfe23df4-baac-4c3c-b3c3-aef0352a2fb6">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001973266</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2026-07-31</instant>
+        </period>
+    </context>
+<context id="C_e8d4df6e-fbdb-4e70-b17a-ddb98bb47c66">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001973266</identifier>
+        </entity>
+        <period>
+            <startDate>2025-04-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="C_f0b39564-095f-4357-9608-ebd1d9f10cf4">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001973266</identifier>
+        </entity>
+        <period>
+            <startDate>2026-04-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="C_f86f24c4-7bd8-4c28-ad7d-afefa613ecc8">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001973266</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2026-07-31</instant>
+        </period>
+    </context>
+<context id="C_3740f1c6-e02e-4eb5-8988-0c5521897901">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001973266</identifier>
+        </entity>
+        <period>
+            <startDate>2025-01-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<dei:DocumentType
+      contextRef="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c"
+      id="F_1991351f-e3f8-4e67-a230-3f59df4d64a0">10-Q</dei:DocumentType>
+<dei:DocumentPeriodEndDate
+      contextRef="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c"
+      id="F_058d5881-45cb-44f0-a430-3929e613fec7">2026-06-30</dei:DocumentPeriodEndDate>
+<dei:Security12bTitle
+      contextRef="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c"
+      id="F_3e18b78e-83fe-4d66-b264-5c5f199f2bea">Class A Common Stock, par value $0.00001 per share</dei:Security12bTitle>
+<dei:TradingSymbol
+      contextRef="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c"
+      id="F_d8f9c2ce-838f-4bd5-a672-fe52e7f6c607">TKO</dei:TradingSymbol>
+<dei:EntityCommonStockSharesOutstanding
+      contextRef="C_dfe23df4-baac-4c3c-b3c3-aef0352a2fb6"
+      decimals="0"
+      id="F_163ad5e5-aa14-4d98-a088-cc2ebed39d85"
+      unitRef="U_shares">73111098</dei:EntityCommonStockSharesOutstanding>
+<dei:EntityCommonStockSharesOutstanding
+      contextRef="C_f86f24c4-7bd8-4c28-ad7d-afefa613ecc8"
+      decimals="0"
+      id="F_d4d58f7c-ae96-40d4-a5d4-d53c19366bfe"
+      unitRef="U_shares">116158615</dei:EntityCommonStockSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_f0b39564-095f-4357-9608-ebd1d9f10cf4"
+      decimals="0"
+      id="F_8f7a6951-03b9-4c6d-be4e-52a038f007ae"
+      unitRef="U_shares">74797769</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_e8d4df6e-fbdb-4e70-b17a-ddb98bb47c66"
+      decimals="0"
+      id="F_7b310287-d01e-4cda-8f19-85a44afb0dba"
+      unitRef="U_shares">81757675</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c"
+      decimals="0"
+      id="F_c59a077a-ef1e-4178-a85a-f04a6afc87c4"
+      unitRef="U_shares">76054642</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_3740f1c6-e02e-4eb5-8988-0c5521897901"
+      decimals="0"
+      id="F_ec7f6a6a-9ac6-45c4-bca2-0ac47d63382c"
+      unitRef="U_shares">81664928</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="C_f0b39564-095f-4357-9608-ebd1d9f10cf4"
+      decimals="0"
+      id="F_b8eda303-48be-412a-b39f-d4b7d8a78115"
+      unitRef="U_shares">75870706</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="C_e8d4df6e-fbdb-4e70-b17a-ddb98bb47c66"
+      decimals="0"
+      id="F_96219c6a-34ee-4cf6-9801-3579bd86569a"
+      unitRef="U_shares">199279343</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c"
+      decimals="0"
+      id="F_8abe8941-ed63-40e6-adb6-737961f3a930"
+      unitRef="U_shares">193323374</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="C_3740f1c6-e02e-4eb5-8988-0c5521897901"
+      decimals="0"
+      id="F_2c3dd488-439e-40b0-a5ab-806d290aa33a"
+      unitRef="U_shares">190448612</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_f0b39564-095f-4357-9608-ebd1d9f10cf4"
+      decimals="0"
+      id="F_c62ba18b-bd8f-4555-90a5-8d69ed799c16"
+      unitRef="U_shares">74797769</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_e8d4df6e-fbdb-4e70-b17a-ddb98bb47c66"
+      decimals="0"
+      id="F_b7c47a07-7cd7-490b-9511-a160e5fde127"
+      unitRef="U_shares">81757675</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c"
+      decimals="0"
+      id="F_afea05b9-7058-4ab3-a6c7-4bd6d3323168"
+      unitRef="U_shares">76054642</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="C_3740f1c6-e02e-4eb5-8988-0c5521897901"
+      decimals="0"
+      id="F_8a1308f2-50f0-43dd-9cd6-f1c10455b640"
+      unitRef="U_shares">81664928</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="C_f0b39564-095f-4357-9608-ebd1d9f10cf4"
+      decimals="0"
+      id="F_f02ceca8-d53a-4e71-859d-6140957170b6"
+      unitRef="U_shares">75870706</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="C_e8d4df6e-fbdb-4e70-b17a-ddb98bb47c66"
+      decimals="0"
+      id="F_6296bf6d-662b-46c2-aa78-1f3001265c13"
+      unitRef="U_shares">199279343</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="C_a1f38f9a-ec3d-40aa-8d25-eb5cf366096c"
+      decimals="0"
+      id="F_160dc8b0-2f42-4d69-9754-37db8aac6948"
+      unitRef="U_shares">193323374</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="C_3740f1c6-e02e-4eb5-8988-0c5521897901"
+      decimals="0"
+      id="F_c379990d-0bc5-4129-8c0d-4358076caf7f"
+      unitRef="U_shares">190448612</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+</xbrl>

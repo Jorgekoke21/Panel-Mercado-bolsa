@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/*
+ * MarketRadar — tokens de diseño.
+ *
+ * Dos capas:
+ *   1. Variables de identidad `--mr-*` (valores concretos). PROVISIONALES: logo, acento,
+ *      paleta y tipografía finales están sin cerrar (CAMBIO 12). Cambiar la identidad =
+ *      editar SOLO este bloque (o añadir otro bajo [data-theme="…"]).
+ *   2. Tokens semánticos de Tailwind (`@theme inline`) que usan los componentes:
+ *      bg-bg, bg-surface, text-fg, text-positive, border-border, bg-heat-p2…
+ *      Ningún componente escribe un color literal.
+ */
+:root {
+  /* Superficies */
+  --mr-bg: #0a0c0f;
+  --mr-surface: #101318;
+  --mr-surface-raised: #151920;
+  --mr-surface-hover: #1b2029;
+  --mr-border: #222932;
+  --mr-border-strong: #313a47;
+
+  /* Texto */
+  --mr-fg: #e5e8ec;
+  --mr-fg-secondary: #a1aab6;
+  --mr-fg-muted: #6a7482;
+
+  /* Semánticos */
+  --mr-accent: #f2a93b; /* ámbar provisional */
+  --mr-accent-muted: rgb(242 169 59 / 0.14);
+  --mr-accent-contrast: #14110b;
+  --mr-positive: #2fbf71;
+  --mr-negative: #f0564a;
+  --mr-warning: #e3b341;
+  --mr-info: #5aa9f0;
+  /* Procedencia / tipo de dato */
+  --mr-demo: #d68cf5;
+  --mr-demo-muted: rgb(214 140 245 / 0.13);
+  --mr-synthetic: #4cc3d9;
+  --mr-synthetic-muted: rgb(76 195 217 / 0.12);
+  /* Capa de inteligencia (Fases 4/5): relación inferida por MarketRadar y salida de IA. */
+  --mr-inferred: #7fa6f5;
+  --mr-inferred-muted: rgb(127 166 245 / 0.12);
+  --mr-ai: #b59cff;
+  --mr-ai-muted: rgb(181 156 255 / 0.13);
+
+  /* Heatmap: 7 tramos con neutro (ver lib/color-scale.ts) */
+  --mr-heat-n3: #b8322b;
+  --mr-heat-n2: #8c2f2a;
+  --mr-heat-n1: #5c2c2b;
+  --mr-heat-0: #2b3139;
+  --mr-heat-p1: #1f4b35;
+  --mr-heat-p2: #1e6a40;
+  --mr-heat-p3: #23874b;
+  --mr-heat-none: #171b21;
+  --mr-heat-text: #f1f3f5;
+
+  /* Tipografía (provisional): la carga next/font en app/layout.tsx */
+  --mr-font-sans: var(--font-ui), ui-sans-serif, system-ui, sans-serif;
+  --mr-font-mono: var(--font-data), ui-monospace, "SFMono-Regular", monospace;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--mr-bg);
+  --color-surface: var(--mr-surface);
+  --color-surface-raised: var(--mr-surface-raised);
+  --color-surface-hover: var(--mr-surface-hover);
+  --color-border: var(--mr-border);
+  --color-border-strong: var(--mr-border-strong);
+
+  --color-fg: var(--mr-fg);
+  --color-fg-secondary: var(--mr-fg-secondary);
+  --color-fg-muted: var(--mr-fg-muted);
+
+  --color-accent: var(--mr-accent);
+  --color-accent-muted: var(--mr-accent-muted);
+  --color-accent-contrast: var(--mr-accent-contrast);
+  --color-positive: var(--mr-positive);
+  --color-negative: var(--mr-negative);
+  --color-warning: var(--mr-warning);
+  --color-info: var(--mr-info);
+  --color-demo: var(--mr-demo);
+  --color-demo-muted: var(--mr-demo-muted);
+  --color-synthetic: var(--mr-synthetic);
+  --color-synthetic-muted: var(--mr-synthetic-muted);
+  --color-inferred: var(--mr-inferred);
+  --color-inferred-muted: var(--mr-inferred-muted);
+  --color-ai: var(--mr-ai);
+  --color-ai-muted: var(--mr-ai-muted);
+
+  --color-heat-n3: var(--mr-heat-n3);
+  --color-heat-n2: var(--mr-heat-n2);
+  --color-heat-n1: var(--mr-heat-n1);
+  --color-heat-0: var(--mr-heat-0);
+  --color-heat-p1: var(--mr-heat-p1);
+  --color-heat-p2: var(--mr-heat-p2);
+  --color-heat-p3: var(--mr-heat-p3);
+  --color-heat-none: var(--mr-heat-none);
+  --color-heat-text: var(--mr-heat-text);
+
+  --font-sans: var(--mr-font-sans);
+  --font-mono: var(--mr-font-mono);
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+}
+
+html {
+  background: var(--mr-bg);
+}
+
+body {
+  background: var(--mr-bg);
+  color: var(--mr-fg);
+  font-family: var(--mr-font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cifras tabulares en toda la app: las columnas numéricas se alinean. */
+.num,
+table,
+[data-num] {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--mr-accent);
+  outline-offset: 1px;
+}
+
+::selection {
+  background: var(--mr-accent-muted);
+}
+
+/* Barras de desplazamiento discretas en paneles con scroll interno. */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mr-border-strong) transparent;
+}

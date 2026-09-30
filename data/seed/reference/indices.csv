@@ -1,0 +1,5 @@
+code,slug,name,short_name,kind,methodology,provider,country_code,currency,constituents_tracked
+SPX,sp500,S&P 500,S&P 500,official,provider,S&P Dow Jones Indices,US,USD,true
+NDX,nasdaq-100,Nasdaq-100,Nasdaq-100,official,provider,Nasdaq,US,USD,false
+DJI,dow-jones-industrial-average,Dow Jones Industrial Average,Dow Jones,official,provider,S&P Dow Jones Indices,US,USD,false
+RUT,russell-2000,Russell 2000,Russell 2000,official,provider,FTSE Russell,US,USD,false

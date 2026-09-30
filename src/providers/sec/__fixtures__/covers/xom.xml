@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reduced from a real SEC filing instance: only cover-page and EPS share facts. -->
+<xbrl xmlns:dei="http://xbrl.sec.gov/dei" xmlns:us-gaap="http://fasb.org/us-gaap" xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+<context id="c-1">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-3">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonStockMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-4">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">xom:ZeroPointFiveTwoFourPercentNotesDue2028Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-5">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">xom:ZeroPointEightThreeFivePercentNotesDue2032Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-6">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">xom:OnePointFourZeroEightPercentNotesDue2039Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-7">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+        </entity>
+        <period>
+            <instant>2026-06-30</instant>
+        </period>
+    </context>
+<context id="c-20">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+        </entity>
+        <period>
+            <startDate>2026-04-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-21">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+        </entity>
+        <period>
+            <startDate>2025-04-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="c-22">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000034088</identifier>
+        </entity>
+        <period>
+            <startDate>2025-01-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<dei:DocumentType contextRef="c-1" id="f-1">10-Q</dei:DocumentType>
+<dei:DocumentPeriodEndDate contextRef="c-1" id="f-3">2026-06-30</dei:DocumentPeriodEndDate>
+<dei:Security12bTitle contextRef="c-3" id="f-25">Common Stock, without par value</dei:Security12bTitle>
+<dei:TradingSymbol contextRef="c-3" id="f-26">XOM</dei:TradingSymbol>
+<dei:Security12bTitle contextRef="c-4" id="f-28">0.524% Notes due 2028</dei:Security12bTitle>
+<dei:TradingSymbol contextRef="c-4" id="f-29">XOM28</dei:TradingSymbol>
+<dei:Security12bTitle contextRef="c-5" id="f-31">0.835% Notes due 2032</dei:Security12bTitle>
+<dei:TradingSymbol contextRef="c-5" id="f-32">XOM32</dei:TradingSymbol>
+<dei:Security12bTitle contextRef="c-6" id="f-34">1.408% Notes due 2039</dei:Security12bTitle>
+<dei:TradingSymbol contextRef="c-6" id="f-35">XOM39A</dei:TradingSymbol>
+<dei:EntityCommonStockSharesOutstanding contextRef="c-7" decimals="INF" id="f-43" unitRef="shares">4111911960</dei:EntityCommonStockSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="c-20" decimals="-6" id="f-496" unitRef="shares">4174000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="c-21" decimals="-6" id="f-497" unitRef="shares">4331000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="c-1" decimals="-6" id="f-498" unitRef="shares">4188000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="c-22" decimals="-6" id="f-499" unitRef="shares">4351000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+</xbrl>

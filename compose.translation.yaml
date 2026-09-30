@@ -1,0 +1,15 @@
+services:
+  headline-translation:
+    image: libretranslate/libretranslate:v1.9.6
+    ports:
+      - "127.0.0.1:5000:5000"
+    environment:
+      LT_LOAD_ONLY: en,es
+      LT_DISABLE_WEB_UI: "true"
+      LT_THREADS: "2"
+    volumes:
+      - headline_translation_models:/home/libretranslate/.local
+    restart: unless-stopped
+
+volumes:
+  headline_translation_models:

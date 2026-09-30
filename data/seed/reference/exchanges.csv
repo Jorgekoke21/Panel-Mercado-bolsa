@@ -1,0 +1,4 @@
+mic,name,acronym,country_code,timezone,currency
+XNYS,New York Stock Exchange,NYSE,US,America/New_York,USD
+XNAS,Nasdaq Stock Market,Nasdaq,US,America/New_York,USD
+BATS,Cboe BZX Exchange,Cboe BZX,US,America/New_York,USD

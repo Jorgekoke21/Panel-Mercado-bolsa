@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reduced from a real SEC filing instance: only cover-page and EPS share facts. -->
+<xbrl xmlns:dei="http://xbrl.sec.gov/dei" xmlns:us-gaap="http://fasb.org/us-gaap" xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+<context id="c-1">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-2">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-3">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:CapitalClassCMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-4">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:DepositarySharesSeriesAMandatoryConvertiblePreferredStockMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-5">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:DepositarySharesSeriesBMandatoryConvertiblePreferredStockMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-6">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A2.375SeniorNotesDue2028Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-7">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A2.500SeniorNotesDue2029Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-8">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A4.125SeniorNotesDue2029Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-9">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A3.200SeniorNotesDue2030Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-10">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A2.875SeniorNotesDue2031Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-11">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A3.450SeniorNotesDue2032Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-12">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A4.625SeniorNotesDue2032Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-13">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A3.000SeniorNotesDue2033Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-14">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A3.125SeniorNotesDue2034Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-15">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A3.625SeniorNotesDue2034Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-16">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A3.375SeniorNotesDue2037Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-17">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A3.500SeniorNotesDue2038Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-18">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A4.100SeniorNotesDue2039Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-19">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A5.500SeniorNotesDue2041Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-20">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A4.000SeniorNotesDue2044Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-21">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A3.875SeniorNotesDue2045Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-22">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A4.500SeniorNotesDue2045Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-23">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A4.000SeniorNotesDue2054Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-24">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A5.875SeniorNotesDue2058Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-25">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A4.800SeniorNotesDue2063Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-26">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A4.375SeniorNotesDue2064Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-27">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:A6.125SeniorNotesDue2126Member</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-28">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2026-07-15</instant>
+        </period>
+    </context>
+<context id="c-29">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2026-07-15</instant>
+        </period>
+    </context>
+<context id="c-30">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">goog:CapitalClassCMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2026-07-15</instant>
+        </period>
+    </context>
+<context id="c-40">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+        </entity>
+        <period>
+            <startDate>2025-04-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="c-41">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+        </entity>
+        <period>
+            <startDate>2026-04-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-42">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+        </entity>
+        <period>
+            <startDate>2025-01-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="c-499">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-04-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-500">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-04-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-501">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-502">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassCMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-04-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-503">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassCMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2026-01-01</startDate>
+            <endDate>2026-06-30</endDate>
+        </period>
+    </context>
+<context id="c-512">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-04-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="c-513">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-04-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="c-514">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassCMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-04-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="c-521">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-01-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="c-522">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-01-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<context id="c-523">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0001652044</identifier>
+            <segment>
+                <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassCMember</xbrldi:explicitMember>
+            </segment>
+        </entity>
+        <period>
+            <startDate>2025-01-01</startDate>
+            <endDate>2025-06-30</endDate>
+        </period>
+    </context>
+<dei:DocumentType contextRef="c-1" id="f-1">10-Q</dei:DocumentType>
+<dei:DocumentPeriodEndDate contextRef="c-1" id="f-3">2026-06-30</dei:DocumentPeriodEndDate>
+<dei:Security12bTitle contextRef="c-2" id="f-15">Class&#160;A Common Stock, $0.001 par value</dei:Security12bTitle>
+<dei:TradingSymbol contextRef="c-2" id="f-16">GOOGL</dei:TradingSymbol>
+<dei:Security12bTitle contextRef="c-3" id="f-18">Class C Capital Stock, $0.001 par value</dei:Security12bTitle>
+<dei:TradingSymbol contextRef="c-3" id="f-19">GOOG</dei:TradingSymbol>
+<dei:Security12bTitle contextRef="c-4" id="f-21">Depositary Shares, each representing a 1/20th interest in a share of 6.25% of Series A Mandatory Convertible Preferred Stock, par value $0.001</dei:Security12bTitle>
+<dei:TradingSymbol contextRef="c-4" id="f-22">GOOGM</dei:TradingSymbol>
+<dei:Security12bTitle contextRef="c-5" id="f-24">Depositary Shares, each representing a 1/20th interest in a share of 6.25% of Series B Mandatory Convertible Preferred Stock, par value $0.001</dei:Security12bTitle>
+<dei:TradingSymbol contextRef="c-5" id="f-25">GOOGN</dei:TradingSymbol>
+<dei:Security12bTitle contextRef="c-6" id="f-27">2.375% Senior Notes due 2028</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-7" id="f-30">2.500% Senior Notes due 2029</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-8" id="f-33">4.125% Senior Notes due 2029</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-9" id="f-36">3.200% Senior Notes due 2030</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-10" id="f-39">2.875% Senior Notes due 2031</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-11" id="f-42">3.450% Senior Notes due 2032</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-12" id="f-45">4.625% Senior Notes due 2032</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-13" id="f-48">3.000% Senior Notes due 2033</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-14" id="f-51">3.125% Senior Notes due 2034</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-15" id="f-54">3.625% Senior Notes due 2034</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-16" id="f-57">3.375% Senior Notes due 2037</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-17" id="f-60">3.500% Senior Notes due 2038</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-18" id="f-63">4.100% Senior Notes due 2039</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-19" id="f-66">5.500% Senior Notes due 2041</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-20" id="f-69">4.000% Senior Notes due 2044</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-21" id="f-72">3.875% Senior Notes due 2045</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-22" id="f-75">4.500% Senior Notes due 2045</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-23" id="f-78">4.000% Senior Notes due 2054</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-24" id="f-81">5.875% Senior Notes due 2058</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-25" id="f-84">4.800% Senior Notes due 2063</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-26" id="f-87">4.375% Senior Notes due 2064</dei:Security12bTitle>
+<dei:Security12bTitle contextRef="c-27" id="f-90">6.125% Senior Notes due 2126</dei:Security12bTitle>
+<dei:EntityCommonStockSharesOutstanding contextRef="c-28" decimals="-6" id="f-99" unitRef="shares">5868000000</dei:EntityCommonStockSharesOutstanding>
+<dei:EntityCommonStockSharesOutstanding contextRef="c-29" decimals="-6" id="f-100" unitRef="shares">835000000</dei:EntityCommonStockSharesOutstanding>
+<dei:EntityCommonStockSharesOutstanding contextRef="c-30" decimals="-6" id="f-101" unitRef="shares">5527000000</dei:EntityCommonStockSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-512"
+      decimals="-6"
+      id="f-1644"
+      unitRef="shares">5819000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-513"
+      decimals="-6"
+      id="f-1645"
+      unitRef="shares">852000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-514"
+      decimals="-6"
+      id="f-1646"
+      unitRef="shares">5451000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-40"
+      decimals="-6"
+      id="f-1647"
+      unitRef="shares">12122000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-499"
+      decimals="-6"
+      id="f-1648"
+      unitRef="shares">5836000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-500"
+      decimals="-6"
+      id="f-1649"
+      unitRef="shares">835000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-502"
+      decimals="-6"
+      id="f-1650"
+      unitRef="shares">5480000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-41"
+      decimals="-6"
+      id="f-1651"
+      unitRef="shares">12151000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-512"
+      decimals="-6"
+      id="f-1696"
+      unitRef="shares">5819000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-513"
+      decimals="-6"
+      id="f-1697"
+      unitRef="shares">852000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-514"
+      decimals="-6"
+      id="f-1698"
+      unitRef="shares">5451000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-40"
+      decimals="-6"
+      id="f-1699"
+      unitRef="shares">12122000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-499"
+      decimals="-6"
+      id="f-1700"
+      unitRef="shares">5836000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-500"
+      decimals="-6"
+      id="f-1701"
+      unitRef="shares">835000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-502"
+      decimals="-6"
+      id="f-1702"
+      unitRef="shares">5480000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-41"
+      decimals="-6"
+      id="f-1703"
+      unitRef="shares">12151000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-512"
+      decimals="-6"
+      id="f-1726"
+      unitRef="shares">6671000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-513"
+      decimals="-6"
+      id="f-1727"
+      unitRef="shares">852000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-514"
+      decimals="-6"
+      id="f-1728"
+      unitRef="shares">5527000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-40"
+      decimals="-6"
+      id="f-1729"
+      unitRef="shares">12198000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-499"
+      decimals="-6"
+      id="f-1730"
+      unitRef="shares">6679000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-500"
+      decimals="-6"
+      id="f-1731"
+      unitRef="shares">835000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-502"
+      decimals="-6"
+      id="f-1732"
+      unitRef="shares">5630000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-41"
+      decimals="-6"
+      id="f-1733"
+      unitRef="shares">12309000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-521"
+      decimals="-6"
+      id="f-1766"
+      unitRef="shares">5826000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-522"
+      decimals="-6"
+      id="f-1767"
+      unitRef="shares">855000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-523"
+      decimals="-6"
+      id="f-1768"
+      unitRef="shares">5472000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-42"
+      decimals="-6"
+      id="f-1769"
+      unitRef="shares">12153000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="c-2" decimals="-6" id="f-1770" unitRef="shares">5829000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-501"
+      decimals="-6"
+      id="f-1771"
+      unitRef="shares">836000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-503"
+      decimals="-6"
+      id="f-1772"
+      unitRef="shares">5460000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="c-1" decimals="-6" id="f-1773" unitRef="shares">12125000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-521"
+      decimals="-6"
+      id="f-1818"
+      unitRef="shares">5826000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-522"
+      decimals="-6"
+      id="f-1819"
+      unitRef="shares">855000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-523"
+      decimals="-6"
+      id="f-1820"
+      unitRef="shares">5472000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-42"
+      decimals="-6"
+      id="f-1821"
+      unitRef="shares">12153000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="c-2" decimals="-6" id="f-1822" unitRef="shares">5829000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-501"
+      decimals="-6"
+      id="f-1823"
+      unitRef="shares">836000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic
+      contextRef="c-503"
+      decimals="-6"
+      id="f-1824"
+      unitRef="shares">5460000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="c-1" decimals="-6" id="f-1825" unitRef="shares">12125000000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-521"
+      decimals="-6"
+      id="f-1848"
+      unitRef="shares">6681000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-522"
+      decimals="-6"
+      id="f-1849"
+      unitRef="shares">855000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-523"
+      decimals="-6"
+      id="f-1850"
+      unitRef="shares">5564000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-42"
+      decimals="-6"
+      id="f-1851"
+      unitRef="shares">12245000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding contextRef="c-2" decimals="-6" id="f-1852" unitRef="shares">6669000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-501"
+      decimals="-6"
+      id="f-1853"
+      unitRef="shares">836000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding
+      contextRef="c-503"
+      decimals="-6"
+      id="f-1854"
+      unitRef="shares">5605000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+<us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding contextRef="c-1" decimals="-6" id="f-1855" unitRef="shares">12274000000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+</xbrl>
