@@ -1,0 +1,59 @@
+name: Update MarketRadar data
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: marketradar-production-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SUPABASE_URL: ${{ secrets.MARKETRADAR_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.MARKETRADAR_SUPABASE_SERVICE_KEY }}
+      ALPACA_API_KEY_ID: ${{ secrets.MARKETRADAR_ALPACA_KEY }}
+      ALPACA_API_SECRET_KEY: ${{ secrets.MARKETRADAR_ALPACA_SECRET }}
+      SEC_USER_AGENT: ${{ secrets.MARKETRADAR_SEC_USER_AGENT }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Update news, prices and financials using free providers
+        run: npx tsx --conditions=react-server scripts/sync/cli.ts auto
+      - name: Check pending translations
+        id: headlines
+        run: npx tsx --conditions=react-server scripts/sync/translate-headlines.ts --plan
+      - name: Reuse translation model
+        if: steps.headlines.outputs.needs_translation == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.ollama/models
+          key: ollama-translategemma-4b-v1
+      - name: Install and start Ollama on the temporary runner
+        if: steps.headlines.outputs.needs_translation == 'true'
+        run: |
+          curl --fail --silent --show-error --location https://ollama.com/install.sh -o /tmp/install-ollama.sh
+          sh /tmp/install-ollama.sh
+          sudo systemctl stop ollama
+          OLLAMA_MODELS="$HOME/.ollama/models" OLLAMA_CONTEXT_LENGTH=2048 OLLAMA_HOST=127.0.0.1:11434 ollama serve >/tmp/ollama.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:11434/api/tags >/dev/null; then break; fi
+            sleep 2
+          done
+          ollama pull translategemma:4b
+      - name: Cache new translated headlines
+        if: steps.headlines.outputs.needs_translation == 'true'
+        run: npx tsx --conditions=react-server scripts/sync/translate-headlines.ts

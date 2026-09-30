@@ -14,7 +14,7 @@ export class OllamaTranslateGemmaProvider implements TranslationProvider {
   readonly id = "ollama-translategemma";
   readonly batchSize = 1;
   readonly version: string;
-  constructor(private readonly model: string, private readonly baseUrl: string, private readonly fetcher: typeof fetch = fetch) {
+  constructor(private readonly model: string, private readonly baseUrl: string, private readonly fetcher: typeof fetch = fetch, private readonly timeoutMs = 15_000) {
     this.version = model;
   }
 
@@ -28,7 +28,7 @@ export class OllamaTranslateGemmaProvider implements TranslationProvider {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ model: this.model, stream: false, keep_alive: -1, messages: [{ role: "user", content: prompt }], options: { temperature: 0 } }),
-        signal: AbortSignal.timeout(15_000),
+        signal: AbortSignal.timeout(this.timeoutMs),
         cache: "no-store",
       });
       if (!response.ok) throw new Error(`Ollama returned HTTP ${response.status}`);
