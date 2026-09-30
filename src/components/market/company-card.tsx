@@ -13,7 +13,7 @@ export function CompanyCard({ row, range, locale = DEFAULT_LOCALE }: { row: Mark
   return (
     <Link
       href={companyPath(row.ticker)}
-      className="flex min-w-0 flex-col gap-0.5 rounded-[4px] border border-border bg-surface px-2.5 py-1.5 hover:border-border-strong hover:bg-surface-hover"
+      className="flex min-w-0 flex-col gap-0.5 rounded-card border-2 border-border-brand bg-surface px-2.5 py-1.5 hover:border-border-strong hover:bg-surface-hover"
     >
       <div className="flex items-center justify-between gap-2">
         <span className="font-mono text-xs font-semibold text-fg">{row.ticker}</span>

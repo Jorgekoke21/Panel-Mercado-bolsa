@@ -27,11 +27,14 @@ export default async function DashboardPage({ searchParams }: PageProps<"/">) {
   const maxAbs = Math.max(0.0001, ...sectorsByReturn.map((s) => Math.abs(s.stats.performance.capWeighted[range] ?? 0)));
 
   return (
-    <div className="flex min-w-0 flex-col gap-2 p-2">
+    <div className="flex min-w-0 flex-col gap-3 p-3 lg:p-4">
       <MarketTicker items={data.benchmarks.items} provenance={data.benchmarks.provenance} locale={locale} />
 
-      <div className="grid min-w-0 grid-cols-1 gap-2 xl:grid-cols-[minmax(0,1fr)_22rem]">
+      <div className="grid min-w-0 grid-cols-1 gap-3 xl:grid-cols-[minmax(0,1fr)_22rem]">
         <Panel
+          tone="market"
+          surface="data"
+          className="self-start"
           title={locale === "es" ? `Mapa ${data.universe.label}` : `${data.universe.label} map`}
           subtitle={locale === "es" ? `${data.universe.securities} valores · sector → empresa · tamaño: capitalización verificada · color: ${timeRangeLabel(locale, range)}` : `${data.universe.securities} securities · sector → company · size: verified market cap · colour: ${timeRangeLabel(locale, range).toLowerCase()}`}
           actions={
@@ -48,7 +51,7 @@ export default async function DashboardPage({ searchParams }: PageProps<"/">) {
           )}
         </Panel>
 
-        <div className="flex min-w-0 flex-col gap-2">
+        <div className="flex min-w-0 flex-col gap-3">
           <Panel
             title={messages.common.sectors}
             subtitle={range}
@@ -61,7 +64,7 @@ export default async function DashboardPage({ searchParams }: PageProps<"/">) {
                 return (
                   <li key={sector.id}>
                     <Link href={sectorPath(sector.slug)} className="grid grid-cols-[8.5rem_1fr_4.5rem] items-center gap-2 px-2.5 py-0.75 hover:bg-surface-hover">
-                      <span className="truncate text-2xs text-fg-secondary">{classificationLabel(locale, sector.name)}</span>
+                      <span className="truncate text-[12px] text-fg-secondary">{classificationLabel(locale, sector.name)}</span>
                       <span className="relative h-2" aria-hidden>
                         <span className="absolute inset-y-0 left-1/2 w-px bg-border-strong" />
                         {value !== null && (
@@ -89,7 +92,7 @@ export default async function DashboardPage({ searchParams }: PageProps<"/">) {
       </div>
 
       <p className="px-0.5 text-[10px] text-fg-muted">
-        {locale === "es" ? "Universo: componentes actuales de " : "Universe: current constituents of the "}<Link href={indexPath(data.universe.indexSlug)} className="underline hover:text-accent">{data.universe.label}</Link>. {locale === "es" ? "Las cifras sectoriales son índices sintéticos de MarketRadar ponderados por capitalización (capitalización al cierre anterior; solo capitalizaciones verificadas), no niveles oficiales de índices." : "Sector figures are MarketRadar synthetic cap-weighted indices of those constituents (previous-close caps, verified caps only), not official index levels."}
+        {locale === "es" ? "Universo: componentes actuales de " : "Universe: current constituents of the "}<Link href={indexPath(data.universe.indexSlug)} className="underline hover:text-link">{data.universe.label}</Link>. {locale === "es" ? "Las cifras sectoriales son índices sintéticos de MarketRadar ponderados por capitalización (capitalización al cierre anterior; solo capitalizaciones verificadas), no niveles oficiales de índices." : "Sector figures are MarketRadar synthetic cap-weighted indices of those constituents (previous-close caps, verified caps only), not official index levels."}
       </p>
     </div>
   );

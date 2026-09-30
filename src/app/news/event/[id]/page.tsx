@@ -43,10 +43,10 @@ export default async function EventPage({ params }: PageProps<"/news/event/[id]"
   } : COMPONENT_LABELS;
 
   return (
-    <div className="flex min-w-0 flex-col gap-2 p-2">
-      <header className="flex flex-col gap-1.5 rounded-[4px] border border-border bg-surface px-3 py-2.5">
+    <div className="flex min-w-0 flex-col gap-3 p-3 lg:p-4">
+      <header className="flex flex-col gap-1.5 rounded-card border-2 border-border-brand bg-surface px-3 py-2.5">
         <nav className="text-[10px] text-fg-muted">
-          <Link href="/news" className="hover:text-accent">
+          <Link href="/news" className="hover:text-link">
             {messages.news.worldPulse}
           </Link>{" "}
           / {messages.news.event}
@@ -63,11 +63,11 @@ export default async function EventPage({ params }: PageProps<"/news/event/[id]"
           {card.unconfirmed && <Badge variant="warning">{messages.news.unconfirmed}</Badge>}
           {card.contradictory && <Badge variant="warning">{messages.news.sourcesDisagree}</Badge>}
         </div>
-        <h1 className="text-lg leading-snug font-semibold text-fg">{card.headline?.language === locale ? card.headline.title : card.title}</h1>
+        <h1 className="font-display text-[24px] leading-[1.15] font-extrabold tracking-[-0.01em] text-fg">{card.headline?.language === locale ? card.headline.title : card.title}</h1>
         {card.headline?.status === "translated" ? (
           <details className="text-2xs text-fg-muted">
             <summary className="w-fit cursor-pointer">Original: {card.originalLanguage?.toUpperCase() ?? "?"}</summary>
-            <span className="block pt-0.5">{card.source ? `${card.source} · ` : ""}{card.originalUrl ? <a href={card.originalUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">{card.title}</a> : card.title}</span>
+            <span className="block pt-0.5">{card.source ? `${card.source} · ` : ""}{card.originalUrl ? <a href={card.originalUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-link">{card.title}</a> : card.title}</span>
           </details>
         ) : card.originalLanguage?.toLowerCase() !== locale ? <p className="text-2xs text-fg-muted">{locale === "es" ? "Original sin traducir" : "Untranslated original"}: {card.originalLanguage?.toUpperCase() ?? "?"}</p> : null}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-2xs text-fg-muted">
@@ -101,7 +101,7 @@ export default async function EventPage({ params }: PageProps<"/news/event/[id]"
                     <div className="flex flex-wrap items-center gap-2 text-2xs">
                       <DirectionMark direction={i.direction} label={i.directionLabel} />
                       {i.href ? (
-                        <Link href={i.href} className="font-semibold text-fg hover:text-accent">
+                        <Link href={i.href} className="font-semibold text-fg hover:text-link">
                           {classificationLabel(locale, i.label)}
                         </Link>
                       ) : (
@@ -128,7 +128,7 @@ export default async function EventPage({ params }: PageProps<"/news/event/[id]"
                         {companies.map((c) => (
                           <span key={c.label} className="inline-flex items-center gap-1" title={c.name}>
                             {c.href ? (
-                              <Link href={c.href} className="font-mono text-fg-secondary hover:text-accent">
+                              <Link href={c.href} className="font-mono text-fg-secondary hover:text-link">
                                 {c.label}
                               </Link>
                             ) : (
@@ -160,7 +160,7 @@ export default async function EventPage({ params }: PageProps<"/news/event/[id]"
                 {data.sources.map((s) => (
                   <Tr key={s.articleId}>
                     <Td className="max-w-md whitespace-normal">
-                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="line-clamp-2 text-fg-secondary hover:text-accent">
+                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="line-clamp-2 text-fg-secondary hover:text-link">
                         {s.title}
                       </a>
                       {s.snippet && <p className="line-clamp-2 text-[10px] text-fg-muted">{s.snippet}</p>}
@@ -215,7 +215,7 @@ export default async function EventPage({ params }: PageProps<"/news/event/[id]"
                 <tbody>
                   {card.reactions.map((r) => (
                     <Tr key={r.node}>
-                      <Td>{r.href ? <Link href={r.href} className="text-fg-secondary hover:text-accent">{r.label}</Link> : r.label}</Td>
+                      <Td>{r.href ? <Link href={r.href} className="text-fg-secondary hover:text-link">{r.label}</Link> : r.label}</Td>
                       <Td numeric>
                         <PerformanceBadge value={r.r1d} />
                       </Td>

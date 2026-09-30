@@ -21,7 +21,7 @@ export default async function SectorsPage({ searchParams }: PageProps<"/sectors"
   const taxonomy = data.sectors[0]?.sector.taxonomyCode;
 
   return (
-    <div className="flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-3 p-3 lg:p-4">
       <Panel
         title={locale === "es" ? "Rotación sectorial" : "Sector rotation"}
         subtitle={`${data.sectors.length} ${messages.common.sectors.toLowerCase()} · ${data.universeSecurities} ${locale === "es" ? "valores en el universo de MarketRadar" : "securities in the MarketRadar universe"}`}

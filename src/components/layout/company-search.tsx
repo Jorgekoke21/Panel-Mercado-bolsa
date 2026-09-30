@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { Search } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { companyPath } from "@/lib/routes";
 import type { SearchEntry } from "@/services/search";
@@ -65,7 +66,8 @@ export function CompanySearch({ entries }: { entries: SearchEntry[] }) {
   const { locale, messages } = useI18n();
 
   return (
-    <div className="relative w-full max-w-sm">
+    <div className="relative w-full max-w-xl">
+      <Search aria-hidden className="pointer-events-none absolute top-1/2 left-2.5 h-4 w-4 -translate-y-1/2 text-fg-muted" strokeWidth={2} />
       <input
         ref={inputRef}
         type="search"
@@ -99,10 +101,10 @@ export function CompanySearch({ entries }: { entries: SearchEntry[] }) {
             inputRef.current?.blur();
           }
         }}
-        className="h-7 w-full rounded-[3px] border border-border bg-bg px-2 text-xs text-fg placeholder:text-fg-muted focus:border-accent focus:outline-none disabled:opacity-60"
+        className="h-9 w-full rounded-ctl border-2 border-border-brand bg-surface pr-2.5 pl-8 text-[13px] text-fg placeholder:text-fg-muted focus:shadow-brut-1 focus:outline-none disabled:opacity-60"
       />
       {open && results.length > 0 && (
-        <ul id={listId} role="listbox" className="absolute top-8 right-0 left-0 z-50 overflow-hidden rounded-[4px] border border-border-strong bg-surface-raised py-1 shadow-lg">
+        <ul id={listId} role="listbox" className="absolute top-11 right-0 left-0 z-50 overflow-hidden rounded-card border-2 border-border-brand bg-surface py-1 shadow-brut-2">
           {results.map((r, i) => (
             <li
               key={r.ticker}
@@ -114,9 +116,9 @@ export function CompanySearch({ entries }: { entries: SearchEntry[] }) {
                 go(r);
               }}
               onMouseEnter={() => setActive(i)}
-              className={cn("flex cursor-pointer items-baseline gap-2 px-2 py-1 text-xs", i === active && "bg-surface-hover")}
+              className={cn("flex cursor-pointer items-baseline gap-2 px-3 py-1.5 text-[13px]", i === active && "bg-accent-muted")}
             >
-              <span className="w-14 shrink-0 font-mono font-semibold text-fg">{r.ticker}</span>
+              <span className="w-14 shrink-0 font-bold text-fg">{r.ticker}</span>
               <span className="min-w-0 flex-1 truncate text-fg-secondary">{r.name}</span>
               <span className="hidden shrink-0 text-[10px] text-fg-muted sm:inline">{r.sector ? classificationLabel(locale, r.sector) : ""}</span>
             </li>

@@ -157,7 +157,7 @@ export default async function CompanyOverviewPage({ params }: PageProps<"/compan
                   label={messages.company.website}
                   value={
                     overview.profile?.website ? (
-                      <a href={overview.profile.website} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                      <a href={overview.profile.website} target="_blank" rel="noopener noreferrer" className="text-link hover:underline">
                         {overview.profile.website.replace(/^https?:\/\//, "")}
                       </a>
                     ) : (
@@ -188,7 +188,7 @@ export default async function CompanyOverviewPage({ params }: PageProps<"/compan
               actions={
                 <>
                   <DataProvenanceBadge provenance={overview.peersProvenance} />
-                  <Link href={companyPath(security.ticker, "peers")} className="text-2xs font-semibold text-accent uppercase hover:underline">
+                  <Link href={companyPath(security.ticker, "peers")} className="text-2xs font-semibold text-link uppercase hover:underline">
                     {locale === "es" ? "Ver comparables" : "All peers"}
                   </Link>
                 </>

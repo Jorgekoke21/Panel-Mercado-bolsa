@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { SECTION_STRIPE, type SectionTone } from "@/components/ui/styles";
 import { cn } from "@/lib/cn";
 
 interface MetricCardProps {
@@ -10,19 +11,22 @@ interface MetricCardProps {
   className?: string;
   /** Definición de la métrica (tooltip; base del futuro Learning Mode). */
   definition?: string;
+  /** Color de sección de la franja superior (por defecto, sin franja). */
+  tone?: SectionTone;
 }
 
-/** Tarjeta compacta de KPI: etiqueta, valor tabular y variación. */
-export function MetricCard({ label, value, change, footnote, aside, className, definition }: MetricCardProps) {
+/** Tarjeta de KPI: etiqueta, valor tabular, variación y nota. Borde estructural; franja de sección opcional. */
+export function MetricCard({ label, value, change, footnote, aside, className, definition, tone }: MetricCardProps) {
+  const style = tone ? ({ "--mr-stripe": SECTION_STRIPE[tone] } as CSSProperties) : undefined;
   return (
-    <div className={cn("flex min-w-0 items-center gap-2 rounded-[4px] border border-border bg-surface px-2.5 py-1.5", className)}>
+    <div style={style} className={cn("flex min-w-0 items-center gap-2 rounded-card border-2 border-border-brand bg-surface px-3 py-2", tone && "mr-stripe pt-3", className)}>
       <div className="min-w-0 flex-1">
-        <div className="truncate text-[10px] font-semibold tracking-wide text-fg-muted uppercase" title={definition}>
+        <div className="truncate text-[11.5px] font-semibold text-fg-secondary" title={definition}>
           {label}
         </div>
-        <div className="num truncate font-mono text-sm font-semibold text-fg">{value}</div>
+        <div className="num truncate text-[17px] leading-snug font-bold text-fg">{value}</div>
         {(change || footnote) && (
-          <div className="flex items-baseline gap-1.5 text-[10px] text-fg-muted">
+          <div className="flex items-baseline gap-1.5 text-[11px] text-fg-muted">
             {change && <span className="text-2xs">{change}</span>}
             {footnote && <span className="truncate">{footnote}</span>}
           </div>

@@ -25,7 +25,8 @@ const HEADER = 16;
 const toContainerUnits = (canvasPx: number) => `max(8px, ${(canvasPx / CANVAS_WIDTH) * 100}cqw)`;
 
 /**
- * Heatmap treemap de dos niveles (grupo → valor). Tamaño = capitalización, color = variación
+ * Siempre sobre superficie de datos (`.mr-data`, navy); los grupos llevan contorno de tinta y las
+ * celdas separaciones finas. Heatmap treemap de dos niveles (grupo → valor). Tamaño = capitalización, color = variación
  * del periodo. El layout se calcula en servidor sobre un lienzo abstracto y se pinta en %.
  */
 export function Heatmap({ data, aspectRatio = 1.9, className, locale = DEFAULT_LOCALE }: HeatmapProps) {
@@ -57,7 +58,7 @@ export function Heatmap({ data, aspectRatio = 1.9, className, locale = DEFAULT_L
     <div
       role="group"
       aria-label={locale === "es" ? `Mapa de calor: tamaño por ${sizeLabel}, color por rendimiento ${timeRangeLabel(locale, data.range)}` : `Heatmap sized by ${sizeLabel}, coloured by ${timeRangeLabel(locale, data.range)} return`}
-      className={cn("relative w-full overflow-hidden bg-bg", className)}
+      className={cn("mr-data relative w-full overflow-hidden bg-bg", className)}
       style={{ aspectRatio, containerType: "inline-size" }}
     >
       {groups.map((group) => {
@@ -65,13 +66,13 @@ export function Heatmap({ data, aspectRatio = 1.9, className, locale = DEFAULT_L
         return (
           <div
             key={group.id}
-            className="absolute border border-bg"
+            className="absolute border-2 border-border-brand"
             style={{ left: pct(group.x, CANVAS_WIDTH), top: pct(group.y, height), width: pct(group.width, CANVAS_WIDTH), height: pct(group.height, height) }}
           >
             {group.showHeader && (
               <div className="absolute inset-x-0 top-0 flex items-center overflow-hidden px-1" style={{ height: pct(HEADER - 2, group.height) }}>
                 {href ? (
-                  <Link href={href} className="truncate text-[10px] font-semibold tracking-wide text-fg-secondary uppercase hover:text-accent">
+                  <Link href={href} className="truncate text-[10px] font-bold tracking-wide text-fg-secondary uppercase hover:text-link">
                     {groupLabel(group.label)}
                   </Link>
                 ) : (
@@ -96,18 +97,18 @@ export function Heatmap({ data, aspectRatio = 1.9, className, locale = DEFAULT_L
               title={`${cell.data.label} · ${cell.data.title} · ${classificationLabel(locale, cell.data.group)} · ${change}`}
               aria-label={`${cell.data.label} ${change}`}
               className={cn(
-                "absolute flex flex-col items-center justify-center overflow-hidden border border-bg leading-tight hover:z-10 hover:outline-1 hover:outline-fg",
+                "absolute flex flex-col items-center justify-center overflow-hidden border border-bg leading-tight hover:z-10 hover:outline-2 hover:outline-brand-yellow",
                 heatClass(cell.data.change, data.range),
               )}
               style={{ left: pct(cell.x, CANVAS_WIDTH), top: pct(cell.y, height), width: pct(cell.width, CANVAS_WIDTH), height: pct(cell.height, height) }}
             >
               {showLabel && (
-                <span className="font-semibold" style={{ fontSize: toContainerUnits(fontSize) }}>
+                <span className="font-bold" style={{ fontSize: toContainerUnits(fontSize) }}>
                   {cell.data.label}
                 </span>
               )}
               {showChange && (
-                <span className="num font-mono opacity-90" style={{ fontSize: toContainerUnits(fontSize * 0.68) }}>
+                <span className="num font-medium opacity-90" style={{ fontSize: toContainerUnits(fontSize * 0.68) }}>
                   {change}
                 </span>
               )}

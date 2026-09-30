@@ -99,13 +99,13 @@ export function WorldContextSection({ kind, name, impacts, locale = DEFAULT_LOCA
   } : CONTEXT_EXAMPLES;
   if (!impacts) {
     return (
-      <Panel title={messages.news.globalContext} subtitle={`${entityKindLabel(locale, kind)} · ${name}`}>
+      <Panel tone="news" title={messages.news.globalContext} subtitle={`${entityKindLabel(locale, kind)} · ${name}`}>
         <EmptyState title={messages.news.globalIntelligenceUnavailable} description={examples[kind]} />
       </Panel>
     );
   }
   return (
-    <Panel title={messages.news.globalContext} subtitle={`${messages.news.potentialImpacts.replace("{name}", name)}`} actions={<Badge variant="inferred">{messages.common.inferred}</Badge>}>
+    <Panel tone="news" title={messages.news.globalContext} subtitle={`${messages.news.potentialImpacts.replace("{name}", name)}`} actions={<Badge variant="inferred">{messages.common.inferred}</Badge>}>
       {impacts.length === 0 ? (
         <EmptyState compact title={messages.news.noRelatedImpacts} description={examples[kind]} />
       ) : (
@@ -120,7 +120,7 @@ export function WorldContextSection({ kind, name, impacts, locale = DEFAULT_LOCA
                   {mechanismLabel(locale, impact.mechanism)} · {horizonLabel(locale, impact.horizon)} · {messages.intelligence.confidence} {Math.round(impact.confidence * 100)}
                 </span>
               </div>
-              <Link href={eventPath(event.id)} className="text-[11px] text-fg hover:text-accent">
+              <Link href={eventPath(event.id)} className="text-[11px] text-fg hover:text-link">
                 {event.headline?.language === locale ? event.headline.title : event.title}
               </Link>
             </li>
@@ -136,16 +136,17 @@ export function NewsSection({ name, events, href, locale = DEFAULT_LOCALE }: { n
   const messages = getMessages(locale);
   if (!events) {
     return (
-      <Panel title={messages.company.news} subtitle={name}>
+      <Panel tone="news" title={messages.company.news} subtitle={name}>
         <EmptyState phase="4" title={messages.news.noNewsSource} description={messages.news.verifiedNewsWillAppear} />
       </Panel>
     );
   }
   return (
     <Panel
+      tone="news"
       title={messages.news.newsAndEvents}
       subtitle={`${name} · 7 ${messages.common.days}`}
-      actions={href ? <Link href={href} className="text-2xs font-semibold text-accent uppercase hover:underline">{locale === "es" ? "Ver todas" : "All"}</Link> : undefined}
+      actions={href ? <Link href={href} className="text-[12px] font-bold text-link hover:underline">{locale === "es" ? "Ver todas →" : "All →"}</Link> : undefined}
       bodyClassName="max-h-[40rem] overflow-y-auto scroll-thin"
     >
       <EventList events={events} empty={messages.news.relatedEvents} />

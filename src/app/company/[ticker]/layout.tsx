@@ -32,7 +32,7 @@ export default async function CompanyLayout({ children, params }: LayoutProps<"/
   const s = row.snapshot;
 
   return (
-    <div className="flex min-w-0 flex-col gap-2 p-2">
+    <div className="flex min-w-0 flex-col gap-3 p-3 lg:p-4">
       <EntityHeader
         kind="company"
         locale={locale}
@@ -62,7 +62,7 @@ export default async function CompanyLayout({ children, params }: LayoutProps<"/
             <span>
               {locale === "es" ? "Otras clases de acciones:" : "Other share classes:"}{" "}
               {header.otherListings.map((l, i) => (
-                <Link key={l.securityId} href={companyPath(l.ticker)} className="font-mono text-fg-secondary hover:text-accent">
+                <Link key={l.securityId} href={companyPath(l.ticker)} className="font-mono text-fg-secondary hover:text-link">
                   {i > 0 && ", "}
                   {l.ticker}
                 </Link>
@@ -72,7 +72,7 @@ export default async function CompanyLayout({ children, params }: LayoutProps<"/
         }
         aside={
           <div className="flex items-baseline gap-2">
-            <span className="num font-mono text-xl font-semibold text-fg">{formatPrice(s?.price, security.currency, locale)}</span>
+            <span className="num font-display text-[28px] leading-none font-extrabold text-fg">{formatPrice(s?.price, security.currency, locale)}</span>
             <PerformanceBadge value={s?.returns["1D"]} variant="pill" arrow label={timeRangeLabel(locale, "1D")} className="text-xs" />
             <DataProvenanceBadge provenance={provenance} />
           </div>
@@ -85,7 +85,7 @@ export default async function CompanyLayout({ children, params }: LayoutProps<"/
         {STRIP_RANGES.map((r) => (
           <MetricCard key={r} label={timeRangeLabel(locale, r)} value={<PerformanceBadge value={s?.returns[r]} label={timeRangeLabel(locale, r)} />} />
         ))}
-        <div className="flex items-center justify-center rounded-[4px] border border-dashed border-border px-2">
+        <div className="flex items-center justify-center rounded-card border-2 border-dashed border-border-strong px-2">
           <DataProvenanceBadge provenance={provenance} />
         </div>
       </section>
@@ -100,7 +100,7 @@ export default async function CompanyLayout({ children, params }: LayoutProps<"/
           { label: messages.company.news, href: companyPath(security.ticker, "news") },
           { label: messages.company.earnings, href: companyPath(security.ticker, "earnings") },
           { label: messages.company.peers, href: companyPath(security.ticker, "peers") },
-          { label: messages.company.ai, href: companyPath(security.ticker, "ai") },
+          { label: messages.company.ai, href: companyPath(security.ticker, "ai"), tone: "ai" },
         ]}
       />
       {children}

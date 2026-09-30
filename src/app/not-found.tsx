@@ -6,12 +6,12 @@ export default async function NotFound() {
   const { messages } = await getServerMessages();
   return (
     <div className="p-2">
-      <div className="rounded-[4px] border border-border bg-surface">
+      <div className="rounded-card border-2 border-border-brand bg-surface">
         <EmptyState
           title={messages.common.notFound}
           description={messages.states.notFoundDescription}
           action={
-            <Link href="/companies" className="text-2xs font-semibold text-accent uppercase hover:underline">
+            <Link href="/companies" className="text-2xs font-semibold text-link uppercase hover:underline">
               {messages.states.browseCompanies}
             </Link>
           }

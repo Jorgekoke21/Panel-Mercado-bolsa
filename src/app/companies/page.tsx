@@ -14,10 +14,10 @@ import { companiesPath, type CompaniesQuery } from "@/lib/routes";
 import { getCompaniesList, parseCompaniesParams } from "@/services/companies";
 import { classificationLabel } from "@/i18n/classification";
 import { getServerMessages } from "@/i18n/server";
+import { buttonClass, inputClass } from "@/components/ui/styles";
 
 export const metadata: Metadata = { title: "Companies" };
 
-const inputClass = "h-7 rounded-[3px] border border-border bg-bg px-2 text-xs text-fg focus:border-accent focus:outline-none";
 
 export default async function CompaniesPage({ searchParams }: PageProps<"/companies">) {
   const { locale, messages } = await getServerMessages();
@@ -44,7 +44,7 @@ export default async function CompaniesPage({ searchParams }: PageProps<"/compan
   const columns: CompanyColumn[] = ["company", "sector", "subIndustry", "exchange", "country", "price", "change", "marketCap"];
 
   return (
-    <div className="flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-3 p-3 lg:p-4">
       <Panel
         title={messages.navigation.companies}
         subtitle={`${formatInteger(data.total, locale)} ${locale === "es" ? "valores" : "securities"}`}
@@ -85,7 +85,7 @@ export default async function CompaniesPage({ searchParams }: PageProps<"/compan
             </select>
           </label>
           <input type="hidden" name="range" value={range} />
-          <button type="submit" className="h-7 rounded-[3px] bg-accent px-3 text-2xs font-semibold text-accent-contrast uppercase hover:opacity-90">
+          <button type="submit" className={buttonClass("primary", "sm", "h-8")}>
             {locale === "es" ? "Aplicar" : "Apply"}
           </button>
           {(query.q || query.sector || query.index) && (

@@ -41,7 +41,7 @@ export function EventCard({ event, now, compact = false, tickerOf }: { event: Ev
   const displayTitle = translated ? event.headline!.title : event.title;
   const needsTranslation = event.originalLanguage?.toLowerCase() !== locale;
   return (
-    <article className={cn("flex min-w-0 flex-col gap-1.5 rounded-[4px] border border-border bg-surface p-2.5", event.status === "stale" && "opacity-80")}>
+    <article className={cn("flex min-w-0 flex-col gap-2 rounded-card border-2 border-border-brand bg-surface p-3 transition-[transform,box-shadow] duration-150 hover:-translate-x-px hover:-translate-y-px hover:shadow-brut-2", event.status === "stale" && "opacity-80")}>
       <header className="flex flex-wrap items-center gap-1.5 text-[10px] text-fg-muted">
         <Badge variant="outline" title={`${eventFamilyLabel(locale, event.family)} · ${event.secondaryLabels.map((label) => eventTypeText(locale, label)).join(", ") || (locale === "es" ? "sin tipo secundario" : "no secondary type")}`}>
           {eventType}
@@ -53,14 +53,14 @@ export function EventCard({ event, now, compact = false, tickerOf }: { event: Ev
           <ConfidenceMeter confidence={event.confidence} />
         </span>
       </header>
-      <Link href={eventPath(event.id)} className="text-xs leading-snug font-semibold text-fg hover:text-accent">
+      <Link href={eventPath(event.id)} className="font-display text-[15px] leading-snug font-bold text-fg hover:text-link">
         {displayTitle}
       </Link>
-      {!compact && <p className="line-clamp-2 text-2xs text-fg-secondary">{summary}</p>}
+      {!compact && <p className="line-clamp-2 text-[12.5px] text-fg-secondary">{summary}</p>}
       {translated ? (
         <details className="text-[9px] text-fg-muted">
           <summary className="w-fit cursor-pointer hover:text-fg-secondary">{locale === "es" ? "Original" : "Original"}: {eventLanguage}</summary>
-          <span className="block pt-0.5">{event.source ? `${event.source} · ` : ""}{event.originalUrl ? <a href={event.originalUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">{event.title}</a> : event.title}</span>
+          <span className="block pt-0.5">{event.source ? `${event.source} · ` : ""}{event.originalUrl ? <a href={event.originalUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-link">{event.title}</a> : event.title}</span>
         </details>
       ) : needsTranslation ? <span className="text-[9px] text-fg-muted" title={locale === "es" ? "Traducción no disponible; se muestra el titular original." : "Translation unavailable; showing the original headline."}>{locale === "es" ? "Original sin traducir" : "Untranslated original"}: {eventLanguage}</span> : null}
       <div className="flex flex-col gap-1">
@@ -75,7 +75,7 @@ export function EventCard({ event, now, compact = false, tickerOf }: { event: Ev
             <li key={`${i.target}-${i.channel}`} className="flex min-w-0 items-center gap-1.5 text-2xs" title={impactSummary(locale, i.direction, i.label, i.mechanism, i.horizon)}>
               <DirectionMark direction={i.direction} label={i.directionLabel} />
               {i.href ? (
-                <Link href={i.href} className="truncate text-fg-secondary hover:text-accent">
+                <Link href={i.href} className="truncate text-fg-secondary hover:text-link">
                   {classificationLabel(locale, i.label)}
                 </Link>
               ) : (
@@ -96,7 +96,7 @@ export function EventCard({ event, now, compact = false, tickerOf }: { event: Ev
           {event.reactions.map((r) => (
             <span key={r.node} className="inline-flex items-center gap-1">
               {r.href ? (
-                <Link href={r.href} className={cn("text-fg-secondary hover:text-accent", r.kind === "company" && "font-mono")}>
+                <Link href={r.href} className={cn("text-fg-secondary hover:text-link", r.kind === "company" && "font-mono")}>
                   {r.label}
                 </Link>
               ) : (

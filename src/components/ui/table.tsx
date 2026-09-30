@@ -1,12 +1,12 @@
 import type { ReactNode, ThHTMLAttributes, TdHTMLAttributes } from "react";
 import { cn } from "@/lib/cn";
 
-/** Primitivas de tabla densa: filas de 24–26px, cabecera fija, numéricos a la derecha. */
+/** Primitivas de tabla: filas de 30px, cabecera fija, separadores finos (nivel 2), numéricos tabulares a la derecha. */
 
 export function Table({ children, className, caption }: { children: ReactNode; className?: string; caption?: string }) {
   return (
     <div className={cn("scroll-thin overflow-x-auto", className)}>
-      <table className="w-full border-collapse text-xs">
+      <table className="w-full border-collapse text-[12.5px]">
         {caption && <caption className="sr-only">{caption}</caption>}
         {children}
       </table>
@@ -27,7 +27,7 @@ export function Th({ numeric, className, children, ...rest }: ThProps) {
     <th
       scope="col"
       className={cn(
-        "h-6 border-b border-border px-2 text-[10px] font-semibold tracking-wide whitespace-nowrap text-fg-muted uppercase",
+        "h-7 border-b border-border px-2 text-[10px] font-semibold tracking-wide whitespace-nowrap text-fg-muted uppercase",
         numeric ? "text-right" : "text-left",
         className,
       )}
@@ -45,7 +45,7 @@ interface TdProps extends TdHTMLAttributes<HTMLTableCellElement> {
 export function Td({ numeric, className, children, ...rest }: TdProps) {
   return (
     <td
-      className={cn("h-[25px] px-2 whitespace-nowrap", numeric && "num text-right font-mono text-[11.5px]", className)}
+      className={cn("h-[30px] px-2 whitespace-nowrap", numeric && "num text-right font-medium", className)}
       {...rest}
     >
       {children}
@@ -54,5 +54,5 @@ export function Td({ numeric, className, children, ...rest }: TdProps) {
 }
 
 export function Tr({ children, className }: { children: ReactNode; className?: string }) {
-  return <tr className={cn("border-b border-border/60 last:border-b-0 hover:bg-surface-hover", className)}>{children}</tr>;
+  return <tr className={cn("border-b border-border last:border-b-0 hover:bg-surface-hover", className)}>{children}</tr>;
 }

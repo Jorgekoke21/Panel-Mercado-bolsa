@@ -22,7 +22,7 @@ export function NewsCard({ title, summary, source, url, publishedAt, impact }: N
         <time dateTime={publishedAt}>{formatDateTime(publishedAt)}</time>
         {impact && <ImpactBadge direction={impact} />}
       </div>
-      <a href={url} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-fg hover:text-accent">
+      <a href={url} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-fg hover:text-link">
         {title}
       </a>
       {summary && <p className="line-clamp-2 text-2xs text-fg-secondary">{summary}</p>}

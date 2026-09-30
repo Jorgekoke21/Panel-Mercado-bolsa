@@ -18,7 +18,7 @@ export default async function MarketsPage() {
   const { indices } = await getMarketsOverview(getRepositories());
   const methodLabels = locale === "es" ? { provider: "Metodología del proveedor", equal_weight: "Ponderación igual", cap_weight: "Ponderación por capitalización" } : METHODOLOGY_LABELS;
   return (
-    <div className="flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-3 p-3 lg:p-4">
       <Panel title={messages.navigation.markets} subtitle={locale === "es" ? "Índices oficiales e índices sintéticos de MarketRadar" : "Official indices and MarketRadar synthetic indices"}>
         <Table caption={locale === "es" ? "Índices de mercado" : "Market indices"}>
           <THead>
@@ -36,7 +36,7 @@ export default async function MarketsPage() {
             {indices.map(({ index, constituents }) => (
               <Tr key={index.id}>
                 <Td>
-                  <Link href={indexPath(index.slug)} className="flex items-baseline gap-2 hover:text-accent">
+                  <Link href={indexPath(index.slug)} className="flex items-baseline gap-2 hover:text-link">
                     <span className="font-semibold text-fg">{index.name}</span>
                     <span className="font-mono text-[10px] text-fg-muted">{index.code}</span>
                   </Link>

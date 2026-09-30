@@ -1,67 +1,160 @@
 @import "tailwindcss";
 
 /*
- * MarketRadar — tokens de diseño.
+ * MarketRadar — tokens de diseño · FINANCIAL BRUTALISM.
+ * Guía completa: docs/design/MARKETRADAR_VISUAL_SYSTEM.md
  *
- * Dos capas:
- *   1. Variables de identidad `--mr-*` (valores concretos). PROVISIONALES: logo, acento,
- *      paleta y tipografía finales están sin cerrar (CAMBIO 12). Cambiar la identidad =
- *      editar SOLO este bloque (o añadir otro bajo [data-theme="…"]).
- *   2. Tokens semánticos de Tailwind (`@theme inline`) que usan los componentes:
- *      bg-bg, bg-surface, text-fg, text-positive, border-border, bg-heat-p2…
+ * Tres capas:
+ *   1. Identidad `--mr-*` en :root (shell claro de papel, ADN Academia/Bots).
+ *   2. `.mr-data` redefine los MISMOS tokens para superficies de datos (navy): gráficos,
+ *      heatmaps y visualizaciones. Los componentes no necesitan variantes de color.
+ *   3. Tokens semánticos de Tailwind (`@theme inline`) que usan los componentes:
+ *      bg-surface, text-fg, text-positive, border-border-brand, shadow-brut-1, rounded-card…
  *      Ningún componente escribe un color literal.
  */
 :root {
-  /* Superficies */
-  --mr-bg: #0a0c0f;
-  --mr-surface: #101318;
-  --mr-surface-raised: #151920;
-  --mr-surface-hover: #1b2029;
-  --mr-border: #222932;
-  --mr-border-strong: #313a47;
+  /* ---------- Ecosistema (valores oficiales de Academia / Bots Trading: --bots-*) ---------- */
+  --mr-ink: #0b0b0b;
+  --mr-paper: #fffaf0;
+  --mr-cream: #fff4df;
+  --mr-brand-yellow: #ffc620;
+  --mr-brand-purple: #7737f5;
+  --mr-brand-pink: #f46cc4;
+  --mr-brand-green: #6dea72;
+  --mr-brand-blue: #20aaf4;
+  --mr-brand-cyan: #64d7fa;
+  --mr-brand-orange: #ff9f1c;
+  --mr-brand-red: #ff5a5f;
+  --mr-yellow-soft: #fff0bf;
+  --mr-purple-soft: #efe3ff;
+  --mr-pink-soft: #ffe2f4;
+  --mr-green-soft: #dcf8dd;
+  --mr-blue-soft: #dcf2ff;
+  --mr-orange-soft: #ffead2;
 
-  /* Texto */
-  --mr-fg: #e5e8ec;
-  --mr-fg-secondary: #a1aab6;
-  --mr-fg-muted: #6a7482;
+  /* ---------- Superficies (shell claro de papel) ---------- */
+  --mr-bg: var(--mr-cream);
+  --mr-surface: var(--mr-paper);
+  --mr-surface-raised: #fff6e6;
+  --mr-surface-hover: #fcefd6;
+  --mr-border: #e2d8c3;          /* nivel 2: separadores internos */
+  --mr-border-strong: #b8ab92;   /* controles e inputs */
+  --mr-border-brand: var(--mr-ink); /* nivel 1/3: contorno estructural */
 
-  /* Semánticos */
-  --mr-accent: #f2a93b; /* ámbar provisional */
-  --mr-accent-muted: rgb(242 169 59 / 0.14);
-  --mr-accent-contrast: #14110b;
-  --mr-positive: #2fbf71;
-  --mr-negative: #f0564a;
-  --mr-warning: #e3b341;
-  --mr-info: #5aa9f0;
-  /* Procedencia / tipo de dato */
-  --mr-demo: #d68cf5;
-  --mr-demo-muted: rgb(214 140 245 / 0.13);
-  --mr-synthetic: #4cc3d9;
-  --mr-synthetic-muted: rgb(76 195 217 / 0.12);
-  /* Capa de inteligencia (Fases 4/5): relación inferida por MarketRadar y salida de IA. */
-  --mr-inferred: #7fa6f5;
-  --mr-inferred-muted: rgb(127 166 245 / 0.12);
-  --mr-ai: #b59cff;
-  --mr-ai-muted: rgb(181 156 255 / 0.13);
+  /* ---------- Texto ---------- */
+  --mr-fg: var(--mr-ink);
+  --mr-fg-secondary: #3d3931;
+  --mr-fg-muted: #6b655a;
 
-  /* Heatmap: 7 tramos con neutro (ver lib/color-scale.ts) */
-  --mr-heat-n3: #b8322b;
-  --mr-heat-n2: #8c2f2a;
-  --mr-heat-n1: #5c2c2b;
-  --mr-heat-0: #2b3139;
-  --mr-heat-p1: #1f4b35;
-  --mr-heat-p2: #1e6a40;
-  --mr-heat-p3: #23874b;
-  --mr-heat-none: #171b21;
+  /* ---------- Semánticos (versión texto, AA sobre papel) ---------- */
+  --mr-accent: var(--mr-brand-yellow);   /* marca · selección · importancia (RELLENO) */
+  --mr-accent-muted: var(--mr-yellow-soft);
+  --mr-accent-contrast: var(--mr-ink);
+  --mr-link: #0a6ba3;                    /* información · enlaces · interacción (TEXTO) */
+  --mr-positive: #147a36;
+  --mr-negative: #c42a31;
+  --mr-warning: #a44e00;
+  --mr-info: #0a6ba3;
+  --mr-demo: #6d4aa8;
+  --mr-demo-muted: #f1ecf8;
+  --mr-synthetic: #0a7896;
+  --mr-synthetic-muted: #dbf6ff;
+  --mr-inferred: #5b2bd1;
+  --mr-inferred-muted: var(--mr-purple-soft);
+  --mr-ai: #5b2bd1;
+  --mr-ai-muted: var(--mr-purple-soft);
+  --mr-news: #b0287f;
+  --mr-news-muted: var(--mr-pink-soft);
+
+  /* Color de sección: franjas de 3px, iconos y estados activos (nunca paneles completos). */
+  --mr-sec-market: var(--mr-brand-yellow);
+  --mr-sec-technical: var(--mr-brand-cyan);
+  --mr-sec-news: var(--mr-brand-pink);
+  --mr-sec-ai: var(--mr-brand-purple);
+  --mr-sec-positive: var(--mr-brand-green);
+  --mr-sec-warning: var(--mr-brand-orange);
+
+  /* Heatmap: 7 tramos apagados + sin dato (se pinta siempre sobre superficie de datos). */
+  --mr-heat-n3: #9e2b2f;
+  --mr-heat-n2: #7a2428;
+  --mr-heat-n1: #52272d;
+  --mr-heat-0: #243242;
+  --mr-heat-p1: #1c4a36;
+  --mr-heat-p2: #1d6a42;
+  --mr-heat-p3: #238650;
+  --mr-heat-none: #0f1e2e;
   --mr-heat-text: #f1f3f5;
 
-  /* Tipografía (provisional): la carga next/font en app/layout.tsx */
-  --mr-font-sans: var(--font-ui), ui-sans-serif, system-ui, sans-serif;
-  --mr-font-mono: var(--font-data), ui-monospace, "SFMono-Regular", monospace;
+  /* Series de gráfico */
+  --mr-chart-bg: #071421;
+  --mr-chart-grid: #152838;
+  --mr-chart-axis: #2b4560;
+  --mr-chart-text: #8a9bb0;
+  --mr-chart-up: #4fd67e;
+  --mr-chart-down: #ff6b70;
+  --mr-series-1: var(--mr-brand-yellow);   /* entidad principal / EMA 200 no */
+  --mr-series-2: var(--mr-brand-blue);
+  --mr-series-3: var(--mr-brand-cyan);
+  --mr-series-4: #e8edf3;                  /* benchmark */
+  --mr-ema-20: var(--mr-brand-blue);
+  --mr-ema-50: var(--mr-brand-cyan);
+  --mr-ema-200: var(--mr-brand-orange);
 
-  color-scheme: dark;
+  /* ---------- Geometría ---------- */
+  --mr-radius-chip: 3px;
+  --mr-radius-ctl: 5px;
+  --mr-radius-card: 8px;
+  --mr-shadow-1: 2px 2px 0 var(--mr-border-brand);
+  --mr-shadow-2: 3px 3px 0 var(--mr-border-brand);
+  --mr-shadow-press: 1px 1px 0 var(--mr-border-brand);
+
+  /* ---------- Tipografía (next/font en app/layout.tsx) ---------- */
+  --mr-font-sans: var(--font-ui), ui-sans-serif, system-ui, sans-serif;
+  /* Cifras: la misma Inter con tabular-nums (no monoespaciada). */
+  --mr-font-mono: var(--font-ui), ui-sans-serif, system-ui, sans-serif;
+  --mr-font-display: var(--font-display), var(--font-ui), ui-sans-serif, system-ui, sans-serif;
+  --mr-font-brand: var(--font-brand), var(--font-display), Impact, sans-serif;
+
+  color-scheme: light;
 }
 
+/*
+ * Superficie de datos (Financial Brutalism: "papel fuera, terminal dentro").
+ * Gráficos, heatmaps y visualizaciones de mercado se pintan en navy. Cualquier contenedor con
+ * `.mr-data` redefine los mismos tokens, así que los componentes no necesitan variantes.
+ * `[data-theme="dark"]` reutiliza la misma paleta para un futuro modo oscuro completo.
+ */
+.mr-data,
+[data-theme="dark"] {
+  --mr-bg: #071421;
+  --mr-surface: #0b1a29;
+  --mr-surface-raised: #102337;
+  --mr-surface-hover: #16304a;
+  --mr-border: #1f3347;
+  --mr-border-strong: #2b4560;
+  --mr-border-brand: #000;
+  --mr-fg: #e6ebf1;
+  --mr-fg-secondary: #b3c0cf;
+  --mr-fg-muted: #8193a8;
+  --mr-accent-muted: rgb(255 198 32 / 0.16);
+  --mr-link: var(--mr-brand-cyan);
+  --mr-positive: #4fd67e;
+  --mr-negative: #ff6b70;
+  --mr-warning: #ffb454;
+  --mr-info: var(--mr-brand-cyan);
+  --mr-demo: #c9a6ff;
+  --mr-demo-muted: rgb(201 166 255 / 0.14);
+  --mr-synthetic: var(--mr-brand-cyan);
+  --mr-synthetic-muted: rgb(100 215 250 / 0.13);
+  --mr-inferred: #b494ff;
+  --mr-inferred-muted: rgb(180 148 255 / 0.14);
+  --mr-ai: #b494ff;
+  --mr-ai-muted: rgb(180 148 255 / 0.14);
+  --mr-news: #ff9bd8;
+  --mr-news-muted: rgb(244 108 196 / 0.14);
+  color-scheme: dark;
+  color: var(--mr-fg);
+}
 @theme inline {
   --color-bg: var(--mr-bg);
   --color-surface: var(--mr-surface);
@@ -90,6 +183,38 @@
   --color-ai: var(--mr-ai);
   --color-ai-muted: var(--mr-ai-muted);
 
+  --color-link: var(--mr-link);
+  --color-news: var(--mr-news);
+  --color-news-muted: var(--mr-news-muted);
+  --color-ink: var(--mr-ink);
+  --color-paper: var(--mr-paper);
+  --color-cream: var(--mr-cream);
+  --color-border-brand: var(--mr-border-brand);
+  --color-brand-yellow: var(--mr-brand-yellow);
+  --color-brand-purple: var(--mr-brand-purple);
+  --color-brand-pink: var(--mr-brand-pink);
+  --color-brand-green: var(--mr-brand-green);
+  --color-brand-blue: var(--mr-brand-blue);
+  --color-brand-cyan: var(--mr-brand-cyan);
+  --color-brand-orange: var(--mr-brand-orange);
+  --color-brand-red: var(--mr-brand-red);
+  --color-yellow-soft: var(--mr-yellow-soft);
+  --color-purple-soft: var(--mr-purple-soft);
+  --color-pink-soft: var(--mr-pink-soft);
+  --color-green-soft: var(--mr-green-soft);
+  --color-blue-soft: var(--mr-blue-soft);
+  --color-orange-soft: var(--mr-orange-soft);
+  --color-chart-bg: var(--mr-chart-bg);
+
+  --radius-chip: var(--mr-radius-chip);
+  --radius-ctl: var(--mr-radius-ctl);
+  --radius-card: var(--mr-radius-card);
+  --shadow-brut-1: var(--mr-shadow-1);
+  --shadow-brut-2: var(--mr-shadow-2);
+  --shadow-brut-press: var(--mr-shadow-press);
+  --font-display: var(--mr-font-display);
+  --font-brand: var(--mr-font-brand);
+
   --color-heat-n3: var(--mr-heat-n3);
   --color-heat-n2: var(--mr-heat-n2);
   --color-heat-n1: var(--mr-heat-n1);
@@ -116,20 +241,22 @@ body {
   color: var(--mr-fg);
   font-family: var(--mr-font-sans);
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
 }
 
 /* Cifras tabulares en toda la app: las columnas numéricas se alinean. */
 .num,
 table,
-[data-num] {
+[data-num],
+.font-mono {
   font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
 }
 
 :focus-visible {
-  outline: 2px solid var(--mr-accent);
-  outline-offset: 1px;
+  outline: 2px solid var(--mr-link);
+  outline-offset: 2px;
 }
 
 ::selection {
@@ -140,4 +267,41 @@ table,
 .scroll-thin {
   scrollbar-width: thin;
   scrollbar-color: var(--mr-border-strong) transparent;
+}
+
+/* Franja superior de color de sección (3px + filo negro), usada por Panel y MetricCard. */
+.mr-stripe {
+  position: relative;
+}
+.mr-stripe::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--mr-stripe, var(--mr-brand-yellow));
+  border-bottom: 1px solid var(--mr-border-brand);
+  border-radius: calc(var(--mr-radius-card) - 2px) calc(var(--mr-radius-card) - 2px) 0 0;
+}
+
+/* Sombra offset "física" con respuesta a la pulsación (botones, pestañas activas). */
+.mr-press {
+  box-shadow: var(--mr-shadow-1);
+  transition: transform 120ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 120ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.mr-press:hover {
+  transform: translate(1px, 1px);
+  box-shadow: var(--mr-shadow-press);
+}
+.mr-press:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mr-press,
+  .mr-press:hover,
+  .mr-press:active {
+    transition: none;
+    transform: none;
+  }
 }

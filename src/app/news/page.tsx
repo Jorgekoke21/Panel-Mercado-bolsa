@@ -13,6 +13,7 @@ import { getServerMessages } from "@/i18n/server";
 import { eventFamilyLabel, syncStatusLabel } from "@/i18n/domain";
 import { classificationLabel } from "@/i18n/classification";
 import { localizeEventCards } from "@/translation/server";
+import { tabItemClass, tabListClass } from "@/components/ui/styles";
 
 export const metadata: Metadata = { title: "World Pulse" };
 
@@ -24,7 +25,7 @@ function ThemeList({ title, items, locale }: { title: string; items: ThemeCount[
       <ul className="flex flex-wrap gap-1">
         {items.map((t) => (
           <li key={t.node}>
-            <Link href={`/news?node=${encodeURIComponent(t.node)}`} className="inline-flex items-center gap-1 rounded-[3px] border border-border px-1.5 py-px text-[10px] text-fg-secondary hover:border-accent hover:text-accent" title={locale === "es" ? `${t.events} evento(s) mencionan directamente ${t.label}; pulsa para filtrar` : `${t.events} event(s) mention ${t.label} directly — click to filter`}>
+            <Link href={`/news?node=${encodeURIComponent(t.node)}`} className="inline-flex items-center gap-1 rounded-[3px] border border-border px-1.5 py-px text-[10px] text-fg-secondary hover:border-border-brand hover:text-link" title={locale === "es" ? `${t.events} evento(s) mencionan directamente ${t.label}; pulsa para filtrar` : `${t.events} event(s) mention ${t.label} directly — click to filter`}>
               {classificationLabel(locale, t.label)}
               <span className="font-mono text-fg-muted">{t.events}</span>
             </Link>
@@ -49,11 +50,11 @@ export default async function NewsPage({ searchParams }: PageProps<"/news">) {
     : PULSE_VIEW_LABELS;
 
   return (
-    <div className="flex min-w-0 flex-col gap-2 p-2">
-      <header className="flex flex-col gap-1.5 rounded-[4px] border border-border bg-surface px-3 py-2.5">
+    <div className="flex min-w-0 flex-col gap-3 p-3 lg:p-4">
+      <header className="flex flex-col gap-1.5 rounded-card border-2 border-border-brand bg-surface px-3 py-2.5">
         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-          <span className="text-[10px] font-semibold tracking-wider text-fg-muted uppercase">{messages.navigation.global}</span>
-          <h1 className="text-lg leading-tight font-semibold text-fg">{messages.news.worldPulse}</h1>
+          <span className="w-full text-[10.5px] font-bold tracking-[0.08em] text-fg-muted uppercase">{messages.navigation.global}</span>
+          <h1 className="font-display text-[26px] leading-[1.1] font-extrabold tracking-[-0.01em] text-fg">{messages.news.worldPulse}</h1>
           <span className="text-2xs text-fg-muted">
             {formatInteger(data.totalEvents, locale)} {messages.common.events} · {locale === "es" ? `últimos ${data.windowDays} días` : `last ${data.windowDays} days`}{data.asOf && <> · {locale === "es" ? "última actividad" : "latest activity"} <TimeAgo iso={data.asOf} now={now} /></>}
           </span>
@@ -64,14 +65,14 @@ export default async function NewsPage({ searchParams }: PageProps<"/news">) {
         <ClaimLegend />
       </header>
 
-      <nav aria-label={messages.news.worldPulse} className="scroll-thin flex overflow-x-auto border-b border-border">
+      <nav aria-label={messages.news.worldPulse} className={tabListClass}>
         {PULSE_VIEWS.map((v) => {
           const href = v === "top" ? "/news" : `/news?view=${v}`;
           const active = v === view && !data.nodeFilter;
           return (
-            <Link key={v} href={href} aria-current={active ? "page" : undefined} className={cn("-mb-px flex items-center gap-1 border-b-2 px-3 py-1.5 text-2xs font-semibold tracking-wide whitespace-nowrap uppercase", active ? "border-accent text-fg" : "border-transparent text-fg-muted hover:text-fg-secondary")}>
+            <Link key={v} href={href} aria-current={active ? "page" : undefined} className={tabItemClass(active)}>
               {viewLabels[v]}
-              <span className="font-mono text-[10px] text-fg-muted">{data.counts[v]}</span>
+              <span className="num rounded-chip bg-ink/10 px-1 text-[10.5px] font-semibold">{data.counts[v]}</span>
             </Link>
           );
         })}
@@ -81,7 +82,7 @@ export default async function NewsPage({ searchParams }: PageProps<"/news">) {
         <div className="flex items-center gap-2 text-2xs text-fg-secondary">
           <Badge variant="accent">{locale === "es" ? "Filtro" : "Filter"}</Badge>
           {locale === "es" ? "Eventos relacionados con" : "Events related to"} <strong className="text-fg">{data.nodeFilter.label}</strong>
-          <Link href="/news" className="text-accent hover:underline">
+          <Link href="/news" className="text-link hover:underline">
             {locale === "es" ? "Borrar" : "Clear"}
           </Link>
         </div>

@@ -10,7 +10,7 @@ export function ClassificationBreadcrumb({ crumbs, current }: { crumbs: EntityCr
         {crumbs.map((c, i) => (
           <li key={c.href} className="flex items-center gap-1">
             {i > 0 && <span aria-hidden>›</span>}
-            <Link href={c.href} className="hover:text-accent">
+            <Link href={c.href} className="hover:text-link">
               {c.label}
             </Link>
           </li>

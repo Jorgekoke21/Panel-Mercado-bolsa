@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { TIME_RANGES, type TimeRange } from "@/domain/time-range";
-import { cn } from "@/lib/cn";
 import { withRange } from "@/lib/routes";
 import { useI18n } from "@/i18n/provider";
 import { timeRangeLabel } from "@/i18n/domain";
+import { segmentGroupClass, segmentItemClass } from "@/components/ui/styles";
 
 interface TimeRangeSelectorProps {
   current: TimeRange;
@@ -18,7 +18,7 @@ interface TimeRangeSelectorProps {
 export function TimeRangeSelector({ current, basePath, ranges = TIME_RANGES }: TimeRangeSelectorProps) {
   const { locale, messages } = useI18n();
   return (
-    <nav aria-label={`${messages.market.range} (${locale === "es" ? "periodo" : "time period"})`} className="flex items-center gap-px rounded-[3px] border border-border bg-bg p-px">
+    <nav aria-label={`${messages.market.range} (${locale === "es" ? "periodo" : "time period"})`} className={segmentGroupClass}>
       {ranges.map((range) => {
         const active = range === current;
         return (
@@ -28,10 +28,7 @@ export function TimeRangeSelector({ current, basePath, ranges = TIME_RANGES }: T
             scroll={false}
             aria-current={active ? "true" : undefined}
             title={timeRangeLabel(locale, range)}
-            className={cn(
-              "rounded-[2px] px-1.5 py-0.5 font-mono text-[10px] font-semibold",
-              active ? "bg-accent text-accent-contrast" : "text-fg-muted hover:bg-surface-hover hover:text-fg",
-            )}
+            className={segmentItemClass(active)}
           >
             {range}
           </Link>

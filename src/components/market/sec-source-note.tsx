@@ -25,7 +25,7 @@ export function SecSourceNote({ profile, latestFiling, legend = true, locale = D
     <div className="flex flex-col gap-1 border-t border-border px-2.5 py-1.5 text-[10px] text-fg-muted">
       <p>
         {locale === "es" ? "Fuente:" : "Source:"}{" "}
-        <a href={companyFilingsUrl(profile.cik)} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+        <a href={companyFilingsUrl(profile.cik)} target="_blank" rel="noopener noreferrer" className="text-link hover:underline">
           SEC EDGAR
         </a>{" "}
         XBRL (US GAAP) · CIK {profile.cik} · {template[profile.industryTemplate]}
@@ -33,7 +33,7 @@ export function SecSourceNote({ profile, latestFiling, legend = true, locale = D
         {latestFiling && (
           <>
             {locale === "es" ? " · último informe " : " · latest "}
-            <a href={filingIndexUrl(profile.cik, latestFiling.accessionNumber)} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+            <a href={filingIndexUrl(profile.cik, latestFiling.accessionNumber)} target="_blank" rel="noopener noreferrer" className="text-link hover:underline">
               {latestFiling.form} {locale === "es" ? "presentado el" : "filed"} {formatDate(latestFiling.filingDate, locale)}
             </a>
           </>

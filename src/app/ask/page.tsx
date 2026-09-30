@@ -17,6 +17,8 @@ import { aiStatusReason, mechanismLabel, horizonLabel } from "@/i18n/domain";
 import { classificationLabel } from "@/i18n/classification";
 import { impactSummary } from "@/i18n/templates";
 import { localizeEventCards } from "@/translation/server";
+import { cn } from "@/lib/cn";
+import { buttonClass, inputClass } from "@/components/ui/styles";
 
 export const metadata: Metadata = { title: "Ask MarketRadar" };
 
@@ -80,7 +82,7 @@ function Block({ block, locale }: { block: AskBlock; locale: Locale }) {
                     {r.cells.map((cell, ci) => (
                       <Td key={ci} numeric={ci > 0 && r.formats?.[ci] !== "text"} className={ci === 3 && r.formats?.[ci] === "text" ? "max-w-72 truncate text-[10px] text-fg-muted" : undefined}>
                         {ci === 0 && r.href ? (
-                          <Link href={r.href} className="font-mono text-fg hover:text-accent">
+                          <Link href={r.href} className="font-mono text-fg hover:text-link">
                             {cell}
                           </Link>
                         ) : (
@@ -133,11 +135,11 @@ export default async function AskPage({ searchParams }: PageProps<"/ask">) {
   }) ?? [];
 
   return (
-    <div className="flex min-w-0 flex-col gap-2 p-2">
-      <header className="flex flex-col gap-2 rounded-[4px] border border-border bg-surface px-3 py-2.5">
+    <div className="flex min-w-0 flex-col gap-3 p-3 lg:p-4">
+      <header className="flex flex-col gap-2 rounded-card border-2 border-border-brand bg-surface px-3 py-2.5">
         <div className="flex flex-wrap items-baseline gap-x-2">
-          <span className="text-[10px] font-semibold tracking-wider text-fg-muted uppercase">{messages.navigation.tools}</span>
-          <h1 className="text-lg leading-tight font-semibold text-fg">{messages.ask.title}</h1>
+          <span className="w-full text-[10.5px] font-bold tracking-[0.08em] text-fg-muted uppercase">{messages.navigation.tools}</span>
+          <h1 className="font-display text-[26px] leading-[1.1] font-extrabold tracking-[-0.01em] text-fg">{messages.ask.title}</h1>
         </div>
         <form action="/ask" method="get" className="flex gap-1.5">
           <input
@@ -146,15 +148,15 @@ export default async function AskPage({ searchParams }: PageProps<"/ask">) {
             maxLength={500}
             placeholder={locale === "es" ? messages.ask.askSpanishSample : messages.ask.askEnglishSample}
             aria-label={messages.ask.question}
-            className="h-8 min-w-0 flex-1 rounded-[4px] border border-border-strong bg-bg px-2.5 text-xs text-fg placeholder:text-fg-muted focus:border-accent focus:outline-none"
+            className={cn(inputClass, "min-w-0 flex-1")}
           />
-          <button type="submit" className="h-8 rounded-[4px] bg-accent px-3 text-2xs font-semibold text-accent-contrast uppercase">
+          <button type="submit" className={buttonClass("ai", "sm", "h-8")}>
             {messages.ask.askButton}
           </button>
         </form>
         <div className="flex flex-wrap gap-1">
           {messages.ask.examples.map((e) => (
-            <Link key={e} href={`/ask?q=${encodeURIComponent(e)}`} className="rounded-[3px] border border-border px-1.5 py-px text-[10px] text-fg-secondary hover:border-accent hover:text-accent">
+            <Link key={e} href={`/ask?q=${encodeURIComponent(e)}`} className="rounded-[3px] border border-border px-1.5 py-px text-[10px] text-fg-secondary hover:border-border-brand hover:text-link">
               {e}
             </Link>
           ))}
@@ -178,7 +180,7 @@ export default async function AskPage({ searchParams }: PageProps<"/ask">) {
                   {messages.intelligence.understood}
                   {result.resolved.map((r) =>
                     r.href ? (
-                      <Link key={r.node} href={r.href} className="rounded-[3px] border border-border px-1 text-fg-secondary hover:text-accent">
+                      <Link key={r.node} href={r.href} className="rounded-[3px] border border-border px-1 text-fg-secondary hover:text-link">
                         {r.label}
                       </Link>
                     ) : (

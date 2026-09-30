@@ -33,7 +33,7 @@ function ImpactList({ items, empty, locale }: { items: ImpactItem[]; empty: stri
               {mechanismLabel(locale, i.mechanism)} · {horizonLabel(locale, i.horizon)} · {locale === "es" ? "confianza" : "conf"} {Math.round(i.confidence * 100)}
             </span>
           </div>
-          <Link href={`/news/event/${i.eventId}`} className="text-[10px] text-fg-muted hover:text-accent">
+          <Link href={`/news/event/${i.eventId}`} className="text-[10px] text-fg-muted hover:text-link">
             {i.eventTitle}
           </Link>
         </li>
@@ -59,8 +59,9 @@ export default async function CompanyIntelligencePage({ params, searchParams }: 
   const m = intel.market;
 
   return (
-    <div className="flex min-w-0 flex-col gap-2">
+    <div className="flex min-w-0 flex-col gap-3">
       <Panel
+        tone="ai"
         title={locale === "es" ? "Lo que importa ahora" : "What matters now"}
         subtitle={intel.asOf ? `${locale === "es" ? "sesión" : "session"} ${intel.asOf}` : undefined}
         actions={intel.ai.brief ? <Badge variant="ai" title={`${locale === "es" ? "Modelo" : "Model"} ${intel.ai.model}`}>{locale === "es" ? "Resumen IA" : "AI brief"}</Badge> : <Badge variant="neutral" title={intel.ai.status.reason}>{messages.intelligence.deterministicEngine}</Badge>}
@@ -99,10 +100,10 @@ export default async function CompanyIntelligencePage({ params, searchParams }: 
       </div>
 
       <div className="grid min-w-0 grid-cols-1 gap-2 lg:grid-cols-3">
-        <Panel title={locale === "es" ? "Posibles efectos positivos" : "Potential positives"} actions={<Badge variant="inferred">{messages.common.inferred}</Badge>}>
+        <Panel tone="ai" title={locale === "es" ? "Posibles efectos positivos" : "Potential positives"} actions={<Badge variant="inferred">{messages.common.inferred}</Badge>}>
           <ImpactList items={intel.positives.map((item) => ({ ...item, eventTitle: localizedTitleById.get(item.eventId) ?? item.eventTitle }))} empty={locale === "es" ? "No hay relaciones potencialmente positivas en eventos recientes." : "No potential positive relationships in recent events."} locale={locale} />
         </Panel>
-        <Panel title={locale === "es" ? "Riesgos potenciales" : "Potential risks"} actions={<Badge variant="inferred">{messages.common.inferred}</Badge>}>
+        <Panel tone="ai" title={locale === "es" ? "Riesgos potenciales" : "Potential risks"} actions={<Badge variant="inferred">{messages.common.inferred}</Badge>}>
           <ImpactList items={intel.risks.map((item) => ({ ...item, eventTitle: localizedTitleById.get(item.eventId) ?? item.eventTitle }))} empty={locale === "es" ? "No hay relaciones potencialmente negativas en eventos recientes." : "No potential negative relationships in recent events."} locale={locale} />
         </Panel>
         <Panel title={locale === "es" ? "Últimos datos fundamentales" : "Latest fundamentals"} actions={<Badge variant="positive">{messages.common.realData}</Badge>} subtitle="SEC XBRL · TTM">
@@ -126,7 +127,7 @@ export default async function CompanyIntelligencePage({ params, searchParams }: 
         <Panel title={locale === "es" ? "Eventos relevantes" : "Relevant events"} subtitle={locale === "es" ? "empresa · industria · sector · 7 días" : "company · industry · sector · 7 days"}>
           <EventList events={localizedEvents} now={now} />
         </Panel>
-        <Panel title={messages.intelligence.claimsEvidence} subtitle={locale === "es" ? "cada afirmación está etiquetada y puede rastrearse" : "every statement is typed and traceable"}>
+        <Panel tone="ai" title={messages.intelligence.claimsEvidence} subtitle={locale === "es" ? "cada afirmación está etiquetada y puede rastrearse" : "every statement is typed and traceable"}>
           <ClaimsList claims={intel.claims} evidence={intel.evidence} />
           <div className="border-t border-border px-2.5 py-1.5">
             <ClaimLegend />
@@ -137,7 +138,7 @@ export default async function CompanyIntelligencePage({ params, searchParams }: 
       <Panel title={messages.intelligence.learningMode} subtitle={locale === "es" ? `conceptos explicados con datos reales de ${header.security.ticker}` : `concepts explained with ${header.security.ticker}'s real data`}>
         <nav className="flex flex-wrap gap-1 border-b border-border px-2.5 py-1.5" aria-label={locale === "es" ? "Conceptos" : "Concepts"}>
           {LEARN_CONCEPTS.map((c) => (
-            <Link key={c.concept} href={`${companyPath(header.security.ticker, "ai")}?learn=${c.concept}`} aria-current={c.concept === concept ? "page" : undefined} className={c.concept === concept ? "rounded-[3px] border border-accent px-1.5 text-[10px] text-accent" : "rounded-[3px] border border-border px-1.5 text-[10px] text-fg-secondary hover:text-accent"}>
+            <Link key={c.concept} href={`${companyPath(header.security.ticker, "ai")}?learn=${c.concept}`} aria-current={c.concept === concept ? "page" : undefined} className={c.concept === concept ? "rounded-[3px] border border-accent px-1.5 text-[10px] text-link" : "rounded-[3px] border border-border px-1.5 text-[10px] text-fg-secondary hover:text-link"}>
               {locale === "es" ? ({ pe: "¿Qué es P/E?", fcf_yield: "¿Qué es la rentabilidad FCF?", rsi: "¿Qué es RSI?", relative_volume: "Volumen relativo", revenue_growth: "Crecimiento de ingresos", operating_margin: "Margen operativo", roe: "ROE", sma200: "Media de 200 días", range_52w: "Rango de 52 semanas", eps: "BPA" } as Record<string, string>)[c.concept] : c.label}
             </Link>
           ))}

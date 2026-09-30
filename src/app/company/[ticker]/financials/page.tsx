@@ -4,12 +4,12 @@ import { StatementTable } from "@/components/market/statement-table";
 import { EmptyState } from "@/components/states/empty-state";
 import { Panel } from "@/components/ui/panel";
 import { getRepositories } from "@/data/registry";
-import { cn } from "@/lib/cn";
 import { companyPath } from "@/lib/routes";
 import { getFinancialsView } from "@/services/company-fundamentals";
 import { loadCompanyHeader } from "../load";
 import { getServerMessages } from "@/i18n/server";
 import { financialTerm } from "@/i18n/domain";
+import { segmentGroupClass, segmentItemClass } from "@/components/ui/styles";
 
 const VIEWS = [
   { id: "annual", label: "Annual" },
@@ -45,17 +45,14 @@ export default async function CompanyFinancialsPage({ params, searchParams }: Pa
         subtitle={`${data.view === "annual" ? messages.company.annual : messages.company.quarterly} · USD`}
         actions={
           <>
-            <nav aria-label={locale === "es" ? "Tipo de periodo" : "Period type"} className="flex items-center gap-px rounded-[3px] border border-border bg-bg p-px">
+            <nav aria-label={locale === "es" ? "Tipo de periodo" : "Period type"} className={segmentGroupClass}>
               {VIEWS.map((v) => (
                 <Link
                   key={v.id}
                   href={`${basePath}?view=${v.id}`}
                   scroll={false}
                   aria-current={v.id === data.view ? "true" : undefined}
-                  className={cn(
-                    "rounded-[2px] px-1.5 py-0.5 font-mono text-[10px] font-semibold",
-                    v.id === data.view ? "bg-accent text-accent-contrast" : "text-fg-muted hover:bg-surface-hover hover:text-fg",
-                  )}
+                  className={segmentItemClass(v.id === data.view)}
                 >
                   {locale === "es" ? (v.id === "annual" ? "Anual" : "Trimestral") : v.label}
                 </Link>

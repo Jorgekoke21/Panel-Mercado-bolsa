@@ -144,7 +144,7 @@ export default async function IndustryPage({ params, searchParams }: PageProps<"
                     {data.subIndustries.map((s) => (
                       <Tr key={s.id}>
                         <Td className="max-w-48 truncate">
-                          <Link href={subIndustryPath(industry.slug, s.slug)} className="text-fg-secondary hover:text-accent" title={s.name}>
+                          <Link href={subIndustryPath(industry.slug, s.slug)} className="text-fg-secondary hover:text-link" title={s.name}>
                             {classificationLabel(locale, s.name)}
                           </Link>
                         </Td>

@@ -13,7 +13,7 @@ const OPTIONS: { locale: Locale; labelKey: "spanish" | "english" }[] = [
 function FlagIcon({ locale }: { locale: Locale }) {
   if (locale === "es") {
     return (
-      <svg aria-hidden="true" viewBox="0 0 24 16" className="h-3 w-[18px] overflow-hidden rounded-[1px] shadow-[0_0_0_1px_rgb(255_255_255/0.15)]">
+      <svg aria-hidden="true" viewBox="0 0 24 16" className="h-3 w-[18px] overflow-hidden rounded-[1px] shadow-[0_0_0_1px_var(--mr-border-brand)]">
         <rect width="24" height="16" fill="#aa151b" />
         <rect y="4" width="24" height="8" fill="#f1bf00" />
       </svg>
@@ -21,7 +21,7 @@ function FlagIcon({ locale }: { locale: Locale }) {
   }
 
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 16" className="h-3 w-[18px] overflow-hidden rounded-[1px] shadow-[0_0_0_1px_rgb(255_255_255/0.15)]">
+    <svg aria-hidden="true" viewBox="0 0 24 16" className="h-3 w-[18px] overflow-hidden rounded-[1px] shadow-[0_0_0_1px_var(--mr-border-brand)]">
       <rect width="24" height="16" fill="#012169" />
       <path d="M0 0 24 16M24 0 0 16" stroke="#fff" strokeWidth="4" />
       <path d="M0 0 24 16M24 0 0 16" stroke="#c8102e" strokeWidth="1.5" />
@@ -62,8 +62,8 @@ export function LanguageSwitcher() {
             onClick={() => setLocale(option.locale)}
             onKeyDown={(event) => selectByKey(event, index)}
             className={cn(
-              "flex h-7 w-7 items-center justify-center rounded-[3px] border text-sm leading-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent",
-              selected ? "border-accent bg-accent-muted text-fg" : "border-border bg-surface text-fg-muted hover:border-border-strong hover:text-fg-secondary",
+              "flex h-8 w-8 items-center justify-center rounded-ctl border-2 text-sm leading-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-link",
+              selected ? "border-border-brand bg-brand-yellow text-fg shadow-brut-1" : "border-transparent bg-transparent text-fg-muted opacity-70 hover:opacity-100",
             )}
           >
             <FlagIcon locale={option.locale} />

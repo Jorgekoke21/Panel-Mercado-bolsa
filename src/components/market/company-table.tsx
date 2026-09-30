@@ -90,13 +90,13 @@ export function CompanyTable({ rows, columns, range, caption, marketDataIsDemo, 
                   case "sector":
                     return (
                       <Td key={c} className="max-w-48 truncate text-fg-secondary">
-                        {cls ? <Link href={sectorPath(cls.sector.slug)} className="hover:text-accent">{classificationLabel(locale, cls.sector.name)}</Link> : "—"}
+                        {cls ? <Link href={sectorPath(cls.sector.slug)} className="hover:text-link">{classificationLabel(locale, cls.sector.name)}</Link> : "—"}
                       </Td>
                     );
                   case "industry":
                     return (
                       <Td key={c} className="max-w-56 truncate text-fg-secondary">
-                        {cls ? <Link href={industryPath(cls.industry.slug)} className="hover:text-accent">{classificationLabel(locale, cls.industry.name)}</Link> : "—"}
+                        {cls ? <Link href={industryPath(cls.industry.slug)} className="hover:text-link">{classificationLabel(locale, cls.industry.name)}</Link> : "—"}
                       </Td>
                     );
                   case "subIndustry":

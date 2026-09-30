@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Inter, Luckiest_Guy } from "next/font/google";
 import { AppShell } from "@/components/layout/app-shell";
 import { getRepositories } from "@/data/registry";
 import type { MarketDataStatusSummary } from "@/data/repositories/market-data-repository";
@@ -8,9 +8,13 @@ import { getServerLocale } from "@/i18n/server";
 import { LocaleProvider } from "@/i18n/provider";
 import "./globals.css";
 
-// Tipografía PROVISIONAL (CAMBIO 12): se expone como variables CSS y los tokens la consumen.
+// Tipografía (Financial Brutalism, ver docs/design/MARKETRADAR_VISUAL_SYSTEM.md):
+//  · Inter → interfaz y cifras (tabular-nums).
+//  · Bricolage Grotesque → títulos de página y titulares (contundencia de Academia/Bots sin tono cartoon).
+//  · Luckiest Guy → SOLO el wordmark; es el hilo directo con Academia Trading y Bots Trading.
 const uiFont = Inter({ subsets: ["latin"], variable: "--font-ui", display: "swap" });
-const dataFont = JetBrains_Mono({ subsets: ["latin"], variable: "--font-data", display: "swap" });
+const displayFont = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", axes: ["opsz"], display: "swap" });
+const brandFont = Luckiest_Guy({ subsets: ["latin"], variable: "--font-brand", weight: "400", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: "MarketRadar", template: "%s · MarketRadar" },
@@ -44,7 +48,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   const [searchEntries, marketStatus, locale] = await Promise.all([loadSearchIndex(), loadMarketStatus(), getServerLocale()]);
   const universe = searchEntries.length;
   return (
-    <html lang={locale} className={`${uiFont.variable} ${dataFont.variable}`}>
+    <html lang={locale} className={`${uiFont.variable} ${displayFont.variable} ${brandFont.variable}`}>
       <body>
         <LocaleProvider initialLocale={locale}>
           <AppShell searchEntries={searchEntries} marketStatus={marketStatus} universeSize={universe} locale={locale}>

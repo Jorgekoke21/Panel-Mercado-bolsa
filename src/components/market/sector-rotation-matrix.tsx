@@ -41,7 +41,7 @@ export function SectorRotationMatrix({ groups, ranges, href, label, locale = DEF
           {groups.map((g) => (
             <tr key={g.id}>
               <th scope="row" className="max-w-48 truncate px-2 py-1 text-left font-normal">
-                <Link href={href(g.slug)} className="text-fg-secondary hover:text-accent">
+                <Link href={href(g.slug)} className="text-fg-secondary hover:text-link">
                   {classificationLabel(locale, g.name)}
                 </Link>
               </th>

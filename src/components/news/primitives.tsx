@@ -63,10 +63,10 @@ export function ConfidenceMeter({ confidence, className }: { confidence: Confide
   const label = locale === "es" ? (confidence.score >= 0.72 ? "Alta" : confidence.score >= 0.5 ? "Media" : "Baja") : CONF_LABEL(confidence.score);
   return (
     <span className={cn("inline-flex items-center gap-1.5 text-[10px] text-fg-muted", className)} title={confidenceTitle(confidence, locale)}>
-      <span role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct} aria-label={`${locale === "es" ? "Confianza" : "Confidence"} ${pct} ${locale === "es" ? "de" : "of"} 100`} className="relative h-1 w-10 overflow-hidden rounded-full bg-surface-hover">
-        <span className={cn("absolute inset-y-0 left-0 rounded-full", label === "High" ? "bg-fg-secondary" : label === "Medium" ? "bg-fg-muted" : "bg-warning")} style={{ width: `${pct}%` }} />
+      <span role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct} aria-label={`${locale === "es" ? "Confianza" : "Confidence"} ${pct} ${locale === "es" ? "de" : "of"} 100`} className="relative h-1.5 w-12 overflow-hidden rounded-full border border-border-brand bg-surface-hover">
+        <span className={cn("absolute inset-y-0 left-0", confidence.score >= 0.72 ? "bg-brand-yellow" : confidence.score >= 0.5 ? "bg-brand-yellow/60" : "bg-brand-orange")} style={{ width: `${pct}%` }} />
       </span>
-      <span className="font-mono">{pct}</span>
+      <span className="num font-semibold text-fg">{pct}</span>
       <span className="uppercase">{label}</span>
     </span>
   );
@@ -125,7 +125,7 @@ export function EntityChip({ chip, short }: { chip: NodeChip; short?: string }) 
   const cls = cn(
     "inline-flex max-w-44 items-center gap-1 truncate rounded-[3px] border px-1.5 py-px text-[10px] leading-4",
     inferred ? "border-dashed border-inferred/50 text-inferred" : "border-border-strong text-fg-secondary",
-    chip.href && "hover:border-accent hover:text-accent",
+    chip.href && "hover:border-border-brand hover:text-link",
   );
   const content = (
     <>
@@ -144,8 +144,8 @@ export function EntityChip({ chip, short }: { chip: NodeChip; short?: string }) 
   );
 }
 
-const STATUS: Record<NewsEvent["status"], { label: string; variant: "accent" | "neutral" | "outline" }> = {
-  developing: { label: "Developing", variant: "accent" },
+const STATUS: Record<NewsEvent["status"], { label: string; variant: "warning" | "neutral" | "outline" }> = {
+  developing: { label: "Developing", variant: "warning" },
   active: { label: "Active", variant: "neutral" },
   stale: { label: "Older", variant: "outline" },
 };

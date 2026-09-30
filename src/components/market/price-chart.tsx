@@ -13,6 +13,7 @@ import {
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 import { useI18n } from "@/i18n/provider";
+import { segmentGroupClass, segmentItemClass } from "@/components/ui/styles";
 
 /**
  * Gráfico de velas (lightweight-charts). Recibe datos YA preparados en servidor: barras ajustadas
@@ -31,11 +32,18 @@ export interface PriceChartProps {
   ariaLabel: string;
 }
 
-const OVERLAY_TOKENS = ["--mr-accent", "--mr-info", "--mr-synthetic"] as const;
+/** EMA 20 azul · EMA 50 cian · EMA 200 naranja (sin paleta arcoíris). */
+const OVERLAY_TOKENS: Record<string, { token: string; dot: string }> = {
+  ema20: { token: "--mr-ema-20", dot: "bg-brand-blue" },
+  ema50: { token: "--mr-ema-50", dot: "bg-brand-cyan" },
+  ema200: { token: "--mr-ema-200", dot: "bg-brand-orange" },
+};
+const overlayStyle = (id: string) => OVERLAY_TOKENS[id] ?? { token: "--mr-series-1", dot: "bg-brand-yellow" };
 
-function token(name: string, fallback: string): string {
+/** Lee un token CSS en el contexto del contenedor (así respeta la superficie `.mr-data`). */
+function token(name: string, fallback: string, el?: Element | null): string {
   if (typeof window === "undefined") return fallback;
-  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+  return getComputedStyle(el ?? document.documentElement).getPropertyValue(name).trim() || fallback;
 }
 
 /** Fecha inicial visible (YYYY-MM-DD) para un periodo, relativa a la última sesión. */
@@ -66,20 +74,20 @@ export function PriceChart({ bars, overlays, defaultRange = "1Y", defaultOverlay
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    const positive = token("--mr-positive", "#2fbf71");
-    const negative = token("--mr-negative", "#f0564a");
+    const positive = token("--mr-chart-up", "#4fd67e", container);
+    const negative = token("--mr-chart-down", "#ff6b70", container);
     const chart = createChart(container, {
       autoSize: true,
       localization: { locale: locale === "es" ? "es-ES" : "en-US" },
       layout: {
-        background: { type: ColorType.Solid, color: token("--mr-bg", "#0a0c0f") },
-        textColor: token("--mr-fg-muted", "#6a7482"),
+        background: { type: ColorType.Solid, color: token("--mr-chart-bg", "#071421", container) },
+        textColor: token("--mr-chart-text", "#8a9bb0", container),
         fontSize: 10,
         fontFamily: getComputedStyle(container).fontFamily,
       },
-      grid: { vertLines: { color: token("--mr-border", "#222932") }, horzLines: { color: token("--mr-border", "#222932") } },
-      rightPriceScale: { borderColor: token("--mr-border-strong", "#313a47") },
-      timeScale: { borderColor: token("--mr-border-strong", "#313a47") },
+      grid: { vertLines: { color: token("--mr-chart-grid", "#152838", container) }, horzLines: { color: token("--mr-chart-grid", "#152838", container) } },
+      rightPriceScale: { borderColor: token("--mr-chart-axis", "#2b4560", container) },
+      timeScale: { borderColor: token("--mr-chart-axis", "#2b4560", container) },
       crosshair: { mode: 0 },
     });
     chartRef.current = chart;
@@ -104,10 +112,10 @@ export function PriceChart({ bars, overlays, defaultRange = "1Y", defaultOverlay
     );
 
     const seriesMap = overlaySeries.current;
-    overlays.forEach((o, i) => {
+    overlays.forEach((o) => {
       const line = chart.addSeries(LineSeries, {
-        color: token(OVERLAY_TOKENS[i % OVERLAY_TOKENS.length] as string, "#f2a93b"),
-        lineWidth: 1,
+        color: token(overlayStyle(o.id).token, "#ffc620", container),
+        lineWidth: 2,
         priceLineVisible: false,
         lastValueVisible: false,
         crosshairMarkerVisible: false,
@@ -148,44 +156,41 @@ export function PriceChart({ bars, overlays, defaultRange = "1Y", defaultOverlay
   return (
     <div className="flex flex-col gap-1.5">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div role="group" aria-label={locale === "es" ? "Periodo del gráfico" : "Chart range"} className="flex items-center gap-px rounded-[3px] border border-border bg-bg p-px">
+        <div role="group" aria-label={locale === "es" ? "Periodo del gráfico" : "Chart range"} className={segmentGroupClass}>
           {CHART_RANGES.map((r) => (
             <button
               key={r}
               type="button"
               aria-pressed={r === range}
               onClick={() => setRange(r)}
-              className={cn(
-                "rounded-[2px] px-1.5 py-0.5 font-mono text-[10px] font-semibold",
-                r === range ? "bg-accent text-accent-contrast" : "text-fg-muted hover:bg-surface-hover hover:text-fg",
-              )}
+              className={segmentItemClass(r === range)}
             >
               {r}
             </button>
           ))}
         </div>
         <div role="group" aria-label={locale === "es" ? "Indicadores del gráfico" : "Overlays"} className="flex items-center gap-1">
-          {overlays.map((o, i) => (
+          {overlays.map((o) => (
             <button
               key={o.id}
               type="button"
               aria-pressed={active.has(o.id)}
               onClick={() => toggle(o.id)}
               className={cn(
-                "rounded-[2px] border px-1.5 py-0.5 font-mono text-[10px] font-semibold",
-                active.has(o.id) ? "border-border-strong text-fg" : "border-border text-fg-muted hover:text-fg",
+                "inline-flex h-6 items-center rounded-chip border px-2 text-[11px] font-semibold",
+                active.has(o.id) ? "border-border-brand bg-surface text-fg" : "border-border-strong text-fg-muted hover:text-fg",
               )}
             >
               <span
                 aria-hidden
-                className={cn("mr-1 inline-block h-1.5 w-1.5 rounded-full", ["bg-accent", "bg-info", "bg-synthetic"][i % 3])}
+                className={cn("mr-1 inline-block h-2 w-2 rounded-full ring-1 ring-border-brand", overlayStyle(o.id).dot)}
               />
               {o.label}
             </button>
           ))}
         </div>
       </div>
-      <div ref={containerRef} role="img" aria-label={ariaLabel} className="h-72 w-full overflow-hidden rounded-[3px] border border-border" />
+      <div ref={containerRef} role="img" aria-label={ariaLabel} className="mr-data h-72 w-full overflow-hidden rounded-ctl border-2 border-border-brand bg-chart-bg" />
     </div>
   );
 }

@@ -159,7 +159,7 @@ export default async function SectorPage({ params, searchParams }: PageProps<"/s
             title={messages.navigation.companies}
             subtitle={`${data.rows.length} · ${locale === "es" ? "mayor capitalización primero" : "largest first"}`}
             actions={
-              <Link href={companiesPath({ sector: sector.slug })} className="text-2xs font-semibold text-accent uppercase hover:underline">
+              <Link href={companiesPath({ sector: sector.slug })} className="text-2xs font-semibold text-link uppercase hover:underline">
                 {locale === "es" ? "Ver en Empresas" : "Open in Companies"}
               </Link>
             }
@@ -202,7 +202,7 @@ function GroupRows({
       {industries.map((i) => (
         <Tr key={i.id}>
           <Td className="max-w-48 truncate">
-            <Link href={industryPath(i.slug)} className="text-fg-secondary hover:text-accent" title={i.name}>
+            <Link href={industryPath(i.slug)} className="text-fg-secondary hover:text-link" title={i.name}>
               {classificationLabel(locale, i.name)}
             </Link>
           </Td>

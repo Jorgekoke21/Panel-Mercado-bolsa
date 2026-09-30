@@ -34,7 +34,7 @@ export function SectorCard({ group, range, industries, locale = DEFAULT_LOCALE }
   return (
     <Link
       href={sectorPath(group.slug)}
-      className="flex flex-col gap-2 rounded-[4px] border border-border bg-surface p-2.5 hover:border-border-strong hover:bg-surface-hover"
+      className="flex flex-col gap-2 rounded-card border-2 border-border-brand bg-surface p-2.5 hover:border-border-strong hover:bg-surface-hover"
     >
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">

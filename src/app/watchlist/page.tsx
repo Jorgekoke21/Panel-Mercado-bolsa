@@ -21,7 +21,7 @@ export default async function WatchlistPage() {
     ? [{ id: "watching", label: "En seguimiento", description: "En el radar" }, { id: "studying", label: "En estudio", description: "Analizando el negocio" }, { id: "interested", label: "Interés", description: "Candidata para una posición" }, { id: "portfolio", label: "En cartera", description: "Actualmente en cartera" }]
     : STATES;
   return (
-    <div className="flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-3 p-3 lg:p-4">
       <Panel title={messages.navigation.watchlist} subtitle={locale === "es" ? "Lista personal con estado, nota y fecha" : "Personal list with status, note and date"} actions={<Badge variant="outline">{locale === "es" ? "Disponible en la fase 6" : "Coming in Phase 6"}</Badge>}>
         <EmptyState
           title={locale === "es" ? "Aún no se guarda la lista de seguimiento" : "Watchlist persistence is not enabled yet"}

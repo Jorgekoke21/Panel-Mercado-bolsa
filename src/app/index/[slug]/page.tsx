@@ -139,7 +139,7 @@ export default async function IndexPage({ params, searchParams }: PageProps<"/in
                 <ul className="flex flex-col py-1 text-2xs">
                   {constituents.sectors.map((s) => (
                     <li key={s.id} className="flex items-center justify-between gap-2 px-2.5 py-0.75 hover:bg-surface-hover">
-                      <Link href={sectorPath(s.slug)} className="truncate text-fg-secondary hover:text-accent">
+                      <Link href={sectorPath(s.slug)} className="truncate text-fg-secondary hover:text-link">
                         {classificationLabel(locale, s.name)}
                       </Link>
                       <span className="num flex shrink-0 gap-3 font-mono text-fg-muted">
@@ -167,7 +167,7 @@ export default async function IndexPage({ params, searchParams }: PageProps<"/in
             title={locale === "es" ? "Componentes" : "Constituents"}
             subtitle={`${formatInteger(constituents.rows.length, locale)} · ${locale === "es" ? "mayor capitalización primero" : "largest first"}`}
             actions={
-              <Link href={companiesPath({ index: index.slug })} className="text-2xs font-semibold text-accent uppercase hover:underline">
+              <Link href={companiesPath({ index: index.slug })} className="text-2xs font-semibold text-link uppercase hover:underline">
                 {locale === "es" ? "Ver en Empresas" : "Open in Companies"}
               </Link>
             }

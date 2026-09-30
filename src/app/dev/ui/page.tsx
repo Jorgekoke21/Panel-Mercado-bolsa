@@ -19,6 +19,7 @@ import { Panel } from "@/components/ui/panel";
 import { mockProvenance } from "@/data/mock/mock-market-data";
 import { computeBreadth } from "@/lib/calculations/breadth";
 import { HEAT_BUCKET_CLASSES } from "@/lib/color-scale";
+import { buttonClass, segmentGroupClass, segmentItemClass, tabItemClass, tabListClass } from "@/components/ui/styles";
 
 /**
  * Galería del design system (solo desarrollo). Todo el contenido es ilustrativo y está
@@ -30,7 +31,7 @@ export default function UiGalleryPage() {
   const demo = mockProvenance();
   const delayed = { source: "example", sourceLabel: "Example provider", asOf: new Date().toISOString(), isDelayed: true, isDemo: false };
   const stale = { ...delayed, asOf: "2020-01-01T00:00:00Z" };
-  const variants: BadgeVariant[] = ["neutral", "outline", "accent", "positive", "negative", "warning", "demo", "synthetic", "official"];
+  const variants: BadgeVariant[] = ["neutral", "outline", "accent", "positive", "negative", "warning", "demo", "synthetic", "official", "inferred", "ai", "info", "news"];
   const breadth = computeBreadth(
     Array.from({ length: 20 }, (_, i) => ({
       return: (i % 5) - 2,
@@ -45,7 +46,47 @@ export default function UiGalleryPage() {
   );
 
   return (
-    <div className="flex flex-col gap-2 p-2">
+    <div className="flex flex-col gap-3 p-3 lg:p-4">
+      <Panel title="Financial Brutalism" subtitle="botones · segmentados · pestañas · tonos de sección · superficie de datos" tone="market">
+        <div className="flex flex-col gap-3 p-3">
+          <div className="flex flex-wrap items-center gap-2">
+            {(["primary", "secondary", "ghost", "ai", "positive", "danger"] as const).map((v) => (
+              <button key={v} type="button" className={buttonClass(v)}>
+                {v}
+              </button>
+            ))}
+          </div>
+          <div className={segmentGroupClass}>
+            {["1D", "1W", "1M", "YTD", "1Y"].map((r) => (
+              <button key={r} type="button" aria-pressed={r === "1D"} className={segmentItemClass(r === "1D")}>
+                {r}
+              </button>
+            ))}
+          </div>
+          <div className={tabListClass}>
+            {["Resumen", "Finanzas", "Técnico", "Noticias"].map((t, i) => (
+              <span key={t} className={tabItemClass(i === 0)}>
+                {t}
+              </span>
+            ))}
+            <span className={tabItemClass(true, "ai")}>IA</span>
+          </div>
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-6">
+            {(["market", "technical", "news", "ai", "positive", "warning"] as const).map((t) => (
+              <MetricCard key={t} tone={t} label={t} value="—" footnote="tono de sección" />
+            ))}
+          </div>
+          <div className="mr-data flex flex-wrap items-center gap-2 rounded-ctl border-2 border-border-brand bg-bg p-3">
+            <span className="text-[12px] text-fg-secondary">.mr-data</span>
+            <Badge variant="positive">real</Badge>
+            <Badge variant="info">calculado</Badge>
+            <Badge variant="synthetic">sintético</Badge>
+            <Badge variant="ai">IA</Badge>
+            <span className="num text-positive">+1,68 %</span>
+            <span className="num text-negative">−0,78 %</span>
+          </div>
+        </div>
+      </Panel>
       <Panel title="UI gallery" subtitle="Development only · illustrative content" actions={<Badge variant="demo">Samples</Badge>}>
         <div className="flex flex-wrap gap-1 p-2.5">
           {variants.map((v) => (

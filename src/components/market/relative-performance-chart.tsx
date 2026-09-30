@@ -9,15 +9,18 @@ import type { ComparisonLine } from "@/services/relative-performance";
 import { CHART_RANGES, type ChartRange, rangeStart } from "./price-chart";
 import { useI18n } from "@/i18n/provider";
 import { classificationLabel, marketDetailLabel } from "@/i18n/classification";
+import { segmentGroupClass, segmentItemClass } from "@/components/ui/styles";
 
 type Method = "cap" | "equal";
 
-const LINE_TOKENS = ["--mr-accent", "--mr-info", "--mr-synthetic", "--mr-fg-secondary"] as const;
-const DOT_CLASSES = ["bg-accent", "bg-info", "bg-synthetic", "bg-fg-secondary"];
+/** Entidad principal amarilla · industria azul · sector cian · benchmark blanco hueso. */
+const LINE_TOKENS = ["--mr-series-1", "--mr-series-2", "--mr-series-3", "--mr-series-4"] as const;
+const DOT_CLASSES = ["bg-brand-yellow", "bg-brand-blue", "bg-brand-cyan", "bg-paper"];
 
-function token(name: string, fallback: string): string {
+/** Lee un token CSS en el contexto del contenedor (así respeta la superficie `.mr-data`). */
+function token(name: string, fallback: string, el?: Element | null): string {
   if (typeof window === "undefined") return fallback;
-  return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+  return getComputedStyle(el ?? document.documentElement).getPropertyValue(name).trim() || fallback;
 }
 
 function pointsFor(line: ComparisonLine, method: Method) {
@@ -77,17 +80,17 @@ export function RelativePerformanceChart({ lines, defaultRange = "1Y", ariaLabel
     const chart = createChart(container, {
       autoSize: true,
       localization: { locale: locale === "es" ? "es-ES" : "en-US" },
-      layout: { background: { type: ColorType.Solid, color: token("--mr-bg", "#0a0c0f") }, textColor: token("--mr-fg-muted", "#6a7482"), fontSize: 10, fontFamily: getComputedStyle(container).fontFamily },
-      grid: { vertLines: { color: token("--mr-border", "#222932") }, horzLines: { color: token("--mr-border", "#222932") } },
-      rightPriceScale: { borderColor: token("--mr-border-strong", "#313a47") },
-      timeScale: { borderColor: token("--mr-border-strong", "#313a47") },
+      layout: { background: { type: ColorType.Solid, color: token("--mr-chart-bg", "#071421", container) }, textColor: token("--mr-chart-text", "#8a9bb0", container), fontSize: 10, fontFamily: getComputedStyle(container).fontFamily },
+      grid: { vertLines: { color: token("--mr-chart-grid", "#152838", container) }, horzLines: { color: token("--mr-chart-grid", "#152838", container) } },
+      rightPriceScale: { borderColor: token("--mr-chart-axis", "#2b4560", container) },
+      timeScale: { borderColor: token("--mr-chart-axis", "#2b4560", container) },
       crosshair: { mode: 0 },
     });
     chartRef.current = chart;
     rebased.forEach((points, i) => {
       const series = chart.addSeries(LineSeries, {
-        color: token(LINE_TOKENS[i % LINE_TOKENS.length] as string, "#f2a93b"),
-        lineWidth: i === 0 ? 2 : 1,
+        color: token(LINE_TOKENS[i % LINE_TOKENS.length] as string, "#ffc620", container),
+        lineWidth: i === 0 ? 3 : 2,
         priceLineVisible: false,
         lastValueVisible: true,
         title: lines[i] ? lineLabel(lines[i].label, locale) : "",
@@ -102,12 +105,12 @@ export function RelativePerformanceChart({ lines, defaultRange = "1Y", ariaLabel
   }, [rebased, lines, locale]);
 
   const button = (active: boolean) =>
-    cn("rounded-[2px] px-1.5 py-0.5 font-mono text-[10px] font-semibold", active ? "bg-accent text-accent-contrast" : "text-fg-muted hover:bg-surface-hover hover:text-fg");
+    segmentItemClass(active);
 
   return (
     <div className="flex flex-col gap-1.5">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div role="group" aria-label={locale === "es" ? "Periodo" : "Period"} className="flex items-center gap-px rounded-[3px] border border-border bg-bg p-px">
+        <div role="group" aria-label={locale === "es" ? "Periodo" : "Period"} className={segmentGroupClass}>
           {CHART_RANGES.map((r) => (
             <button key={r} type="button" aria-pressed={r === range} onClick={() => setRange(r)} className={button(r === range)}>
               {r}
@@ -115,7 +118,7 @@ export function RelativePerformanceChart({ lines, defaultRange = "1Y", ariaLabel
           ))}
         </div>
         {hasCap && hasEqual && (
-          <div role="group" aria-label={locale === "es" ? "Ponderación" : "Weighting"} className="flex items-center gap-px rounded-[3px] border border-border bg-bg p-px">
+          <div role="group" aria-label={locale === "es" ? "Ponderación" : "Weighting"} className={segmentGroupClass}>
             <button type="button" aria-pressed={method === "cap"} onClick={() => setMethod("cap")} className={button(method === "cap")}>
               {locale === "es" ? "Capitalización" : "Cap weight"}
             </button>
@@ -125,7 +128,7 @@ export function RelativePerformanceChart({ lines, defaultRange = "1Y", ariaLabel
           </div>
         )}
       </div>
-      <div ref={containerRef} role="img" aria-label={`${ariaLabel} · ${locale === "es" ? "rebasado a 100 al inicio de" : "rebased to 100 at the start of"} ${range}`} className="h-64 w-full overflow-hidden rounded-[3px] border border-border" />
+      <div ref={containerRef} role="img" aria-label={`${ariaLabel} · ${locale === "es" ? "rebasado a 100 al inicio de" : "rebased to 100 at the start of"} ${range}`} className="mr-data h-64 w-full overflow-hidden rounded-ctl border-2 border-border-brand bg-chart-bg" />
       <table className="w-full text-2xs">
         <tbody>
           {lines.map((l, i) => {
@@ -136,7 +139,7 @@ export function RelativePerformanceChart({ lines, defaultRange = "1Y", ariaLabel
             return (
               <tr key={l.id} className="border-t border-border/60">
                 <td className="py-0.5 pr-2">
-                  <span aria-hidden className={cn("mr-1.5 inline-block h-1.5 w-1.5 rounded-full", DOT_CLASSES[i % DOT_CLASSES.length])} />
+                  <span aria-hidden className={cn("mr-1.5 inline-block h-2 w-2 rounded-full ring-1 ring-border-brand", DOT_CLASSES[i % DOT_CLASSES.length])} />
                   <span className="text-fg">{lineLabel(l.label, locale)}</span>
                   <span className="ml-1.5 text-fg-muted">
                     {lineDetail(l.detail, locale)}

@@ -8,7 +8,7 @@ import { LanguageSwitcher } from "./language-switcher";
 import { getMessages, type Locale, interpolate } from "@/i18n/messages";
 import { formatDate } from "@/lib/format";
 
-/** Marco de la terminal: barra lateral + barra superior + contenido. */
+/** Marco de la terminal: barra lateral + barra superior (buscador protagonista, estado de datos, idioma) + contenido. */
 export function AppShell({
   children,
   searchEntries,
@@ -26,7 +26,7 @@ export function AppShell({
     <div className="flex min-h-screen">
       <Sidebar />
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-20 flex h-10 items-center gap-3 border-b border-border bg-bg/95 pr-2 pl-20 backdrop-blur-sm md:pl-2">
+        <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b-2 border-border-brand bg-bg pr-3 pl-24 md:pl-4">
           <CompanySearch entries={searchEntries} />
           <div className="ml-auto flex items-center gap-2">
             <MarketStatusBadge status={marketStatus} universeSize={universeSize} locale={locale} />
@@ -58,7 +58,7 @@ function MarketStatusBadge({ status, universeSize, locale }: { status: MarketDat
   const title = `${interpolate(messages.market.endOfDayPrices, { provider: status.sourceLabel ?? (locale === "es" ? "el proveedor" : "the provider"), date: formatDate(status.asOf, locale) })} ${status.realSecurities}/${universeSize} ${locale === "es" ? "valores tienen datos reales" : "securities have real data"}${partial ? messages.market.missingRemainder : ""}. ${messages.market.benchmarkDemo}`;
   const state = partial ? (locale === "es" ? "parcial" : "partial") : (locale === "es" ? "real" : "real");
   return (
-    <Badge variant={partial ? "warning" : "neutral"} title={title}>
+    <Badge variant={partial ? "warning" : "official"} title={title}>
       {messages.market.marketData}: {partial ? `${state} ${status.realSecurities}/${universeSize}` : state} · EOD {formatDate(status.asOf, locale)}
     </Badge>
   );

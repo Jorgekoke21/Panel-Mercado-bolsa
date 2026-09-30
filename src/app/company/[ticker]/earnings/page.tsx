@@ -54,7 +54,7 @@ export default async function CompanyEarningsPage({ params }: PageProps<"/compan
                       href={filingIndexUrl(data.profile.cik, r.release.accessionNumber)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-accent hover:underline"
+                      className="text-link hover:underline"
                       title={`8-K item 2.02 · accession ${r.release.accessionNumber}${r.release.acceptedAt ? ` · accepted ${r.release.acceptedAt}` : ""}`}
                     >
                       {formatDate(r.release.filingDate, locale)}

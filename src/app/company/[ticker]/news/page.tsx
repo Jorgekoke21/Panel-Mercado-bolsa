@@ -26,7 +26,7 @@ export default async function CompanyNewsPage({ params }: PageProps<"/company/[t
       <div className="flex flex-wrap items-center justify-between gap-2 px-0.5">
         <p className="text-2xs text-fg-muted">
           {news.total} {messages.common.events} · {locale === "es" ? "últimos 14 días · deduplicados y agrupados desde fuentes oficiales y medios globales." : "last 14 days · deduplicated and clustered from official sources and global media."}{" "}
-          <Link href={`/news?node=${encodeURIComponent(`company:${header.security.companyId}`)}`} className="text-accent hover:underline">
+          <Link href={`/news?node=${encodeURIComponent(`company:${header.security.companyId}`)}`} className="text-link hover:underline">
             {locale === "es" ? "Abrir en Pulso global" : "Open in World Pulse"}
           </Link>
         </p>

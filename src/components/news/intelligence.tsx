@@ -84,7 +84,7 @@ export function MovePanel({ move, title }: { move: MovePanelData; title?: string
             {move.catalysts.map((c) => (
               <li key={c.eventId} className="flex flex-wrap items-center gap-1.5 text-2xs">
                 <Badge variant={c.relation === "Likely related" ? "accent" : "neutral"}>{locale === "es" ? (c.relation === "Likely related" ? "Probablemente relacionado" : "Posiblemente relacionado") : c.relation}</Badge>
-                {c.filing ? <span className="text-fg-secondary">{c.title}</span> : <Link href={eventPath(c.eventId)} className="text-fg-secondary hover:text-accent">{c.title}</Link>}
+                {c.filing ? <span className="text-fg-secondary">{c.title}</span> : <Link href={eventPath(c.eventId)} className="text-fg-secondary hover:text-link">{c.title}</Link>}
                 <span className="text-[10px] text-fg-muted">{locale === "es" ? `Evento ${c.scope === "company" ? "de empresa" : c.scope === "industry" ? "de industria" : c.scope === "sector" ? "de sector" : "de mercado"} dentro del periodo analizado.` : c.reason}</span>
               </li>
             ))}
