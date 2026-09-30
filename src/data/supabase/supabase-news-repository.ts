@@ -14,6 +14,9 @@ function fail(operation: string, error: { message: string }): never {
 const EVENT_COLUMNS =
   "id, fingerprint, event_type, secondary_types, title, summary, summary_origin, first_seen_at, last_seen_at, article_count, independent_sources, has_official_source, confidence, confidence_breakdown, importance, contradictory, unconfirmed, polarity, languages, moves, representative_article_id";
 
+// UUID filters are encoded in the URL; keep requests below the local gateway's URI limit.
+const EVENT_QUERY_BATCH_SIZE = 100;
+
 interface EventRow {
   id: string;
   fingerprint: string;
@@ -77,6 +80,14 @@ export class SupabaseNewsRepository implements NewsRepository {
   }
 
   private async hydrate(rows: EventRow[]): Promise<NewsEvent[]> {
+    const events: NewsEvent[] = [];
+    for (let i = 0; i < rows.length; i += EVENT_QUERY_BATCH_SIZE) {
+      events.push(...await this.hydrateBatch(rows.slice(i, i + EVENT_QUERY_BATCH_SIZE)));
+    }
+    return events;
+  }
+
+  private async hydrateBatch(rows: EventRow[]): Promise<NewsEvent[]> {
     if (rows.length === 0) return [];
     const ids = rows.map((r) => r.id);
     const representativeIds = rows.map((r) => r.representative_article_id).filter((id): id is number => id !== null);
@@ -134,8 +145,8 @@ export class SupabaseNewsRepository implements NewsRepository {
     const ids = [...new Set([...(ents.data ?? []), ...(imps.data ?? [])].map((r) => r.event_id))];
     if (ids.length === 0) return [];
     const out: EventRow[] = [];
-    for (let i = 0; i < ids.length; i += 300) {
-      let q = this.db.from("news_events").select(EVENT_COLUMNS).in("id", ids.slice(i, i + 300)).neq("fingerprint", "pending");
+    for (let i = 0; i < ids.length; i += EVENT_QUERY_BATCH_SIZE) {
+      let q = this.db.from("news_events").select(EVENT_COLUMNS).in("id", ids.slice(i, i + EVENT_QUERY_BATCH_SIZE)).neq("fingerprint", "pending");
       if (query.since) q = q.gte("last_seen_at", query.since);
       if (query.types?.length) q = q.in("event_type", [...query.types]);
       if (query.minImportance !== undefined) q = q.gte("importance", query.minImportance);
